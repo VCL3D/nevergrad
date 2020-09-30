@@ -1,4 +1,4 @@
-# Nevegrad Optimizer Benchmarking for 3D Performance Capture
+# Performance Capture Nevegrad Optimizer Benchmarking 
 
 ## Description
 
@@ -18,7 +18,7 @@ A Project consists of sensed 3D data captured during the performance recording o
 
 As an experiment we define the problem of fitting the subject's template 3D mesh to a specific target frame of the captured performance. Each experiment instance is tightly bound to a project. Further, an experiment instance is bound to a specific objective function parameterization and to a specific optimizer under a pre-defined budget. Objective function parameterization consists of defining a subset of template's animation variables to optimize against (i.e. locking/excluding some degrees of freedom for some joints) and specifying weights of individual error terms.
 
-# Objective Function
+### Objective Function
 
 The objective function of each experiment is a weighted linear combination of five individual error terms:
 <!--
