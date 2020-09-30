@@ -42,12 +42,6 @@ The different error terms are:
 
 These can be categorized with respect to their domain:
 
-| 3D   |      2D      |  Pose |
-|:----------:|:-------------:|:------:|
-| Chamfer distance |  Silhouette error | Anthropometric prior |
-| Surface alignment |       |    |
-|  |  |     |
-
 | <img src="https://render.githubusercontent.com/render/math?math=3D">   |      <img src="https://render.githubusercontent.com/render/math?math=2D">      |  Pose |
 |:----------:|:-------------:|:------:|
 | Chamfer distance (<img src="https://render.githubusercontent.com/render/math?math=E_D">) <!-- $E_D$ --> |  Silhouette error (<img src="https://render.githubusercontent.com/render/math?math=E_J">) <!-- $E_J$ --> | Anthropometric prior (<img src="https://render.githubusercontent.com/render/math?math=E_A">) <!-- $E_A$ --> |
