@@ -12,7 +12,7 @@ permalink: /
 
 This pull request regards the addition of a new benchmark to the nevergrad platform for the real-world noisy problem of 3D Human Performance Capture via fitting an animatable template 3D mesh to post-processed sensed 3D data.
 
-The dataset consists of 3D captures of 11 human performances, recorded via a Volumetric Capture System of [1]. For the purposes of this benchmark and for each performance, a 3D animatable template mesh has been created along with the selection of one individual target frame. The benchmark aims to assess the performance of nevergrad optimizers to the task of fitting the animatable template mesh (via its animation parameters) to the sensed 3D data of the selected performance's target frame.
+The dataset consists of 3D captures of 11 human performances, recorded via the Multi-View Volumetric Capture System of [1]. For the purposes of this benchmark and for each performance, a 3D animatable template mesh has been created along with the selection of one individual target frame. The benchmark aims to assess the performance of nevergrad optimizers to the task of fitting the animatable template mesh (via its animation parameters) to the sensed 3D data of the selected performance's target frame.
 
 To realize the concept, along with this pull request, we release Windows binaries of a Performance Capture Benchmark Server (Perfcap benchmark server) which is able to serve Objective Function evaluations for arbitrary template mesh animation parameter values for each one of the designed experiments. To the nevergrad side, we implemented a python client to this benchmark server, which acts as an ObjectiveFunction proxy for every benchmarked optimizer.
 
@@ -100,7 +100,7 @@ Our complete objective as formulated above is a linear weighted combination of t
 
 ## Requirements
 
-This pull request has been tested with Python 3.8.2. As of 30th September 2020, the code is compatible with the latest commit in nevegrad-master. A pre-requisite is to have RabbitMQ installed to a reachable network location
+This pull request has been tested with Python 3.8.2. As of 30th September 2020, the code is compatible with the latest commit in nevegrad-master. A pre-requisite is to have RabbitMQ installed to a reachable network location.
 
 - [RabbitMQ](https://www.rabbitmq.com/)
 
@@ -119,9 +119,14 @@ The benchmark server and the nevergrad benchmark python client may be running at
 <img width=300 src="./assets/images/overview.gif"/>
 </p>
 
+## Installation
+
+1. Download the Performance Capture Benchmark Server [binaries](https://github.com/VCL3D/PerformanceCapture/releases/tag/1.0) and extract it to a `root` folder.
+2. Download the Performance Capture Benchmark [dataset](https://github.com/VCL3D/PerformanceCapture/releases/tag/dataset_1.0) and extract it to your `root` folder.
+
 ## Run
 
-To run the nevergrad performance capture benchmark follow the steps bellow:
+To run the nevergrad Performance Capture Benchmark follow the steps bellow:
 
 1. Start benchmark server by running the following command inside the bin folder
 (or edit and run `run_benchmark_server.bat` found inside the same folder)
@@ -150,7 +155,7 @@ To run the nevergrad performance capture benchmark follow the steps bellow:
 - `ng_exchange_in`: the exchange name that the nevergrad python client listens to. Must be the same exchange name as the one defined in Benchmark Server's `--benchmark_server_ng_exchange_in`.
 - `ng_exchange_out`: the exchange name that the nevergrad python client writes to. Must be the same exchange name as the one define in Benchmark Server's `--benchmark_server_ng_exchange_out`.
 
-3. Run the benchmark by executing the standard nevergrad interface for benchmark execution, by defining the Performance Capture benchmark name:
+3. Run the benchmark by executing the standard nevergrad interface for benchmark execution, by defining the Performance Capture Benchmark name (i.e):
 
     `python -m nevergrad.benchmark perfcap_bench1 --repetitions=10 --plot`
 
@@ -158,7 +163,60 @@ The experiment names can be anything between `perfcap_bench1` and `perfcap_bench
 
 ## Benchmark Server Documentation
 
-When `performance_capture.exe` is run without the `--benchmark_server` flag, it can be used to load a project file and inspect data and show some visualizations of selected individual error terms.
+When `performance_capture.exe` is run without the `--benchmark_server` flag and without any additional command line arguments, it can be used to load a project file in order to inspect data and see some visualizations of selected individual error terms.
+
+1. To open a project click `File -> Open`.
+
+2. Use the widget manager to show groups of additional widgets. The first button enable the `Player` and `Visualization` widgets, while the second enables `Error Selector`, `Errors` and `Pose Parameters` widgets
+
+    ![WidgetManager](./assets/images/perfcap/widget_manager.png)
+
+2. Use the player widget to navigate throughout the recoding.
+
+    ![Player](./assets/images/perfcap/player.png)
+
+3. Use the `Visualizations` widget to enable additional visualizations
+
+    ![Visualziations](./assets/images/perfcap/visualizations.png)
+
+    - Show Axis Triad: Enable visualization of the global 3D coordinate system at origin (0,0,0)
+    - Show grid: Enables visualization of a virtual grid, aligned with the floor.
+    - Show Point Cloud: Enable visualization of raw point cloud of the recording
+    - Use Device Color: Visualize the Point Cloud with different color for each camera view-point.
+    - Show Frustums: Visualize the locations of each camera viewpoint
+    - Frustum Scale: Control the scale of the frustums
+    - Point Size: Point size used to rendered the 3D Point Cloud of the recording
+    - Show Target: This will show the 3D reconstructed mesh for the point cloud of the current frame. This constitutes the target for the template fitting problem. (i.e fit the animated template to the Target mesh)
+    - Show Animated: This will show the animated template at the specified pose (as defined in the `Pose Parameters` widget)
+    - Show Chamfer: This will enable color visualization of the Chamfer distance (<img src="https://render.githubusercontent.com/render/math?math=E_D">) on the animated template mesh
+    - Split Meshes: Show animated and Target meshes side by side (or otherwise, visualize them in the common global 3D coordinate system)
+    - Show Template: Visualizes the template mesh at its initial pose (i.e. in the pose in which it was reconstructed)
+    - Show Skeleton: Visualizes the skeleton of the animated mesh
+    - Show weights: Visualizes the domminant skinning weights on the animated template in a color-coded manner.Each color is assigned to a different limb.
+    - Blend weights: Visualizes the blended skinning weights on the animated template in a color-coded manner.
+    - Render 2D Silhouettes: Enables visualization of the silhouette error terms
+
+    A screenshot of the depicted target and animated meshes is given below:
+
+    ![Meshes](./assets/images/perfcap/meshes.png)
+
+    Sample visualization of chamfer and silhouette error terms as we move the elbow of the animated template are given next:
+
+    ![MeshError1](./assets/images/perfcap/mesh_error_vis1.gif)
+    ![MeshError2](./assets/images/perfcap/mesh_error_vis2.gif)
+
+4. The `Pose Parameters` widget allows controlling the animated pose of the template mesh. Use this widget to set specific individual values to each joint's orientation and the root joint's translation. All values are in degrees, except for the root translation which is measured in meters. Make sure you check `Show Pose Values` in order to have the ability to edit the animatable parameters of the template mesh. Choose skinning type between `Dual Quaternion` and `Linear` (pick `Dual Quaternion` for higher quality skinning). Click reset to zero out all animation parameters (i.e. revert animated mesh to its default pose).
+
+    ![PoseParametersHidden](./assets/images/perfcap/pose_params_dont_show.png)
+    ![PoseParametersShown](./assets/images/perfcap/pose_params_show.png)
+
+4. Use the `Error selector` to select and enable computation of individual error terms. After making your selection, press `Refresh Frame` once. Evaluation of the error terms is executed after each modification of the animate template's pose parameters in the `Pose Parameters` widget.
+
+    ![Error Selector](./assets/images/perfcap/error_selector.png)
+
+5. Use the `Errors` widget to inspect individual error term values and small graphs, as you play with pose parameters in the `Pose Parameters widget`
+
+    ![Errors](./assets/images/perfcap/error_vis.png)
 
 ## Logging
 
@@ -241,48 +299,11 @@ For each objective function evaluation, the Performance Capture Benchmark Server
 
 ### Quantitative Results
 
+![LossVSBudget](./assets/images/quantitative/loss_vs_budget.png)
+![HausVSBudget](./assets/images/quantitative/hauss_vs_budget.png)
+
+
 #### Nevergrad Experiments
-
-##### Experiment#10
-
-| CMA   |      DE      |  Powell |
-|:----------:|:-------------:|:-------------:|
-| ![CMA](./assets/images/exploration/perfcap_experiment10_gifs/CMA.gif) | ![CMA](./assets/images/exploration/perfcap_experiment10_gifs/DE.gif) | ![CMA](./assets/images/exploration/perfcap_experiment10_gifs/Powell.gif) |
-| CMA+Powell | DiscreteOnePlusOne | NGO |
-| ![chainCMAPowell](./assets/images/exploration/perfcap_experiment10_gifs/chainCMAPowell.gif) | ![DiscreteOnePlusOne](./assets/images/exploration/perfcap_experiment10_gifs/DiscreteOnePlusOne.gif) | ![NGO](./assets/images/exploration/perfcap_experiment10_gifs/NGO.gif) |
-| TBPSA | RealSpacePSO |Shiwa |
-| ![TBPSA](./assets/images/exploration/perfcap_experiment10_gifs/TBPSA.gif) | ![CMA](./assets/images/exploration/perfcap_experiment10_gifs/RealSpacePso.gif) | ![Shiwa](./assets/images/exploration/perfcap_experiment10_gifs/Shiwa.gif) |
-
-##### Experiment#2
-
-| CMA   |      DE      |  Powell |
-|:----------:|:-------------:|:-------------:|
-| ![CMA](./assets/images/exploration/perfcap_experiment2_gifs/CMA.gif) | ![CMA](./assets/images/exploration/perfcap_experiment2_gifs/DE.gif) | ![CMA](./assets/images/exploration/perfcap_experiment2_gifs/Powell.gif) |
-| CMA+Powell | DiscreteOnePlusOne | NGO |
-| ![chainCMAPowell](./assets/images/exploration/perfcap_experiment2_gifs/chainCMAPowell.gif) | ![DiscreteOnePlusOne](./assets/images/exploration/perfcap_experiment2_gifs/DiscreteOnePlusOne.gif) | ![NGO](./assets/images/exploration/perfcap_experiment2_gifs/NGO.gif) |
-| TBPSA | RealSpacePSO |Shiwa |
-| ![TBPSA](./assets/images/exploration/perfcap_experiment2_gifs/TBPSA.gif) | ![CMA](./assets/images/exploration/perfcap_experiment2_gifs/RealSpacePso.gif) | ![Shiwa](./assets/images/exploration/perfcap_experiment2_gifs/Shiwa.gif) |
-
-##### Experiment#2
-
-| CMA   |      DE      |  Powell |
-|:----------:|:-------------:|:-------------:|
-| ![CMA](./assets/images/exploration/perfcap_experiment8_gifs/CMA.gif) | ![CMA](./assets/images/exploration/perfcap_experiment8_gifs/DE.gif) | ![CMA](./assets/images/exploration/perfcap_experiment8_gifs/Powell.gif) |
-| CMA+Powell | DiscreteOnePlusOne | NGO |
-| ![chainCMAPowell](./assets/images/exploration/perfcap_experiment8_gifs/chainCMAPowell.gif) | ![DiscreteOnePlusOne](./assets/images/exploration/perfcap_experiment8_gifs/DiscreteOnePlusOne.gif) | ![NGO](./assets/images/exploration/perfcap_experiment8_gifs/NGO.gif) |
-| TBPSA | RealSpacePSO |Shiwa |
-| ![TBPSA](./assets/images/exploration/perfcap_experiment8_gifs/TBPSA.gif) | ![CMA](./assets/images/exploration/perfcap_experiment8_gifs/RealSpacePso.gif) | ![Shiwa](./assets/images/exploration/perfcap_experiment8_gifs/Shiwa.gif) |
-
-#### Optimizer Evaluation
-
-### Qualitative Results
-
-#### Experiment#2
-![Exp2](./assets/images/qualitative/experiment2.png)
-
-#### Convergence Pose & Visualized Error
-
-#### Optimizer Exploration Evolution
 
 | Experiment#1   |      Experiment#2      |  Experiment#3 |
 |:----------:|:-------------:|:-------------:|
@@ -294,6 +315,7 @@ For each objective function evaluation, the Performance Capture Benchmark Server
 | Experiment#10 | Experiment#11 | |
 | ![exp10](./assets/images/nevergrad/plots/perfcap_experiment10_plots/xpresults.png) | ![exp11](./assets/images/nevergrad/plots/perfcap_experiment11_plots/xpresults.png) | |
 
+
 | Experiment#1   |      Experiment#2      |  Experiment#3 |
 |:----------:|:-------------:|:-------------:|
 | ![exp1](./assets/images/nevergrad/plots/perfcap_experiment1_plots/fight_all.png) | ![exp2](./assets/images/nevergrad/plots/perfcap_experiment2_plots/fight_all.png) | ![exp3](./assets/images/nevergrad/plots/perfcap_experiment3_plots/fight_all.png) |
@@ -303,6 +325,49 @@ For each objective function evaluation, the Performance Capture Benchmark Server
 | ![exp7](./assets/images/nevergrad/plots/perfcap_experiment7_plots/fight_all.png) | ![exp8](./assets/images/nevergrad/plots/perfcap_experiment8_plots/fight_all.png) | ![exp9](./assets/images/nevergrad/plots/perfcap_experiment9_plots/fight_all.png) |
 | Experiment#10 | Experiment#11 | |
 | ![exp10](./assets/images/nevergrad/plots/perfcap_experiment10_plots/fight_all.png) | ![exp11](./assets/images/nevergrad/plots/perfcap_experiment11_plots/fight_all.png) | |
+
+
+#### Optimizer Evaluation
+
+### Qualitative Results
+
+#### Visualized Error on the Converged Poses
+Worm colors indicate low geometric error.
+#### Experiment#2
+![Exp2_1](./assets/images/qualitative/experiment2_1.png)
+![Exp2_2](./assets/images/qualitative/experiment2_2.png)
+
+#### Optimizer Exploration Evolution
+
+##### Experiment#2
+
+| CMA   |      DE      |  Powell |
+|:----------:|:-------------:|:-------------:|
+| ![CMA](./assets/images/exploration/perfcap_experiment2_gifs/CMA.gif) | ![CMA](./assets/images/exploration/perfcap_experiment2_gifs/DE.gif) | ![CMA](./assets/images/exploration/perfcap_experiment2_gifs/Powell.gif) |
+| CMA+Powell | DiscreteOnePlusOne | NGO |
+| ![chainCMAPowell](./assets/images/exploration/perfcap_experiment2_gifs/chainCMAPowell.gif) | ![DiscreteOnePlusOne](./assets/images/exploration/perfcap_experiment2_gifs/DiscreteOnePlusOne.gif) | ![NGO](./assets/images/exploration/perfcap_experiment2_gifs/NGO.gif) |
+| TBPSA | RealSpacePSO |Shiwa |
+| ![TBPSA](./assets/images/exploration/perfcap_experiment2_gifs/TBPSA.gif) | ![CMA](./assets/images/exploration/perfcap_experiment2_gifs/RealSpacePso.gif) | ![Shiwa](./assets/images/exploration/perfcap_experiment2_gifs/Shiwa.gif) |
+
+##### Experiment#8
+
+| CMA   |      DE      |  Powell |
+|:----------:|:-------------:|:-------------:|
+| ![CMA](./assets/images/exploration/perfcap_experiment8_gifs/CMA.gif) | ![CMA](./assets/images/exploration/perfcap_experiment8_gifs/DE.gif) | ![CMA](./assets/images/exploration/perfcap_experiment8_gifs/Powell.gif) |
+| CMA+Powell | DiscreteOnePlusOne | NGO |
+| ![chainCMAPowell](./assets/images/exploration/perfcap_experiment8_gifs/chainCMAPowell.gif) | ![DiscreteOnePlusOne](./assets/images/exploration/perfcap_experiment8_gifs/DiscreteOnePlusOne.gif) | ![NGO](./assets/images/exploration/perfcap_experiment8_gifs/NGO.gif) |
+| TBPSA | RealSpacePSO |Shiwa |
+| ![TBPSA](./assets/images/exploration/perfcap_experiment8_gifs/TBPSA.gif) | ![CMA](./assets/images/exploration/perfcap_experiment8_gifs/RealSpacePso.gif) | ![Shiwa](./assets/images/exploration/perfcap_experiment8_gifs/Shiwa.gif) |
+
+##### Experiment#10
+
+| CMA   |      DE      |  Powell |
+|:----------:|:-------------:|:-------------:|
+| ![CMA](./assets/images/exploration/perfcap_experiment10_gifs/CMA.gif) | ![CMA](./assets/images/exploration/perfcap_experiment10_gifs/DE.gif) | ![CMA](./assets/images/exploration/perfcap_experiment10_gifs/Powell.gif) |
+| CMA+Powell | DiscreteOnePlusOne | NGO |
+| ![chainCMAPowell](./assets/images/exploration/perfcap_experiment10_gifs/chainCMAPowell.gif) | ![DiscreteOnePlusOne](./assets/images/exploration/perfcap_experiment10_gifs/DiscreteOnePlusOne.gif) | ![NGO](./assets/images/exploration/perfcap_experiment10_gifs/NGO.gif) |
+| TBPSA | RealSpacePSO |Shiwa |
+| ![TBPSA](./assets/images/exploration/perfcap_experiment10_gifs/TBPSA.gif) | ![CMA](./assets/images/exploration/perfcap_experiment10_gifs/RealSpacePso.gif) | ![Shiwa](./assets/images/exploration/perfcap_experiment10_gifs/Shiwa.gif) |
 
 
 `
