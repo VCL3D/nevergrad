@@ -115,6 +115,10 @@ Requirements for Performance Capture Benchmark Server:
 
 The benchmark server and the nevergrad benchmark python client may be running at different workstations without problem. Messaging between Nevergrad Benchmark and the Performance Capture Benchmark Server is realized through a RabbitMQ server which must be reachable from the machine hosting the nevergrad benchmark as well as the machine hosting the Performance Capure Benchmark Server.
 
+<p align="center">
+<img width=300 src="./assets/images/overview.gif"/>
+</p>
+
 ## Run
 
 To run the nevergrad performance capture benchmark follow the steps bellow:
@@ -219,21 +223,66 @@ Each benchmark experiment can be configured via editing the files located in `be
 
 #### Nevergrad Experiments
 
+##### Experiment#10
+
+| CMA   |      DE      |  Powell |
+|:----------:|:-------------:|:-------------:|
+| ![CMA](./assets/images/exploration/perfcap_experiment10_gifs/CMA.gif) | ![CMA](./assets/images/exploration/perfcap_experiment10_gifs/DE.gif) | ![CMA](./assets/images/exploration/perfcap_experiment10_gifs/Powell.gif) |
+| CMA+Powell | DiscreteOnePlusOne | NGO |
+| ![chainCMAPowell](./assets/images/exploration/perfcap_experiment10_gifs/chainCMAPowell.gif) | ![DiscreteOnePlusOne](./assets/images/exploration/perfcap_experiment10_gifs/DiscreteOnePlusOne.gif) | ![NGO](./assets/images/exploration/perfcap_experiment10_gifs/NGO.gif) |
+| TBPSA | RealSpacePSO |Shiwa |
+| ![TBPSA](./assets/images/exploration/perfcap_experiment10_gifs/TBPSA.gif) | ![CMA](./assets/images/exploration/perfcap_experiment10_gifs/RealSpacePso.gif) | ![Shiwa](./assets/images/exploration/perfcap_experiment10_gifs/Shiwa.gif) |
+
+##### Experiment#2
+
+| CMA   |      DE      |  Powell |
+|:----------:|:-------------:|:-------------:|
+| ![CMA](./assets/images/exploration/perfcap_experiment2_gifs/CMA.gif) | ![CMA](./assets/images/exploration/perfcap_experiment2_gifs/DE.gif) | ![CMA](./assets/images/exploration/perfcap_experiment2_gifs/Powell.gif) |
+| CMA+Powell | DiscreteOnePlusOne | NGO |
+| ![chainCMAPowell](./assets/images/exploration/perfcap_experiment2_gifs/chainCMAPowell.gif) | ![DiscreteOnePlusOne](./assets/images/exploration/perfcap_experiment2_gifs/DiscreteOnePlusOne.gif) | ![NGO](./assets/images/exploration/perfcap_experiment2_gifs/NGO.gif) |
+| TBPSA | RealSpacePSO |Shiwa |
+| ![TBPSA](./assets/images/exploration/perfcap_experiment2_gifs/TBPSA.gif) | ![CMA](./assets/images/exploration/perfcap_experiment2_gifs/RealSpacePso.gif) | ![Shiwa](./assets/images/exploration/perfcap_experiment2_gifs/Shiwa.gif) |
+
+##### Experiment#2
+
+| CMA   |      DE      |  Powell |
+|:----------:|:-------------:|:-------------:|
+| ![CMA](./assets/images/exploration/perfcap_experiment8_gifs/CMA.gif) | ![CMA](./assets/images/exploration/perfcap_experiment8_gifs/DE.gif) | ![CMA](./assets/images/exploration/perfcap_experiment8_gifs/Powell.gif) |
+| CMA+Powell | DiscreteOnePlusOne | NGO |
+| ![chainCMAPowell](./assets/images/exploration/perfcap_experiment8_gifs/chainCMAPowell.gif) | ![DiscreteOnePlusOne](./assets/images/exploration/perfcap_experiment8_gifs/DiscreteOnePlusOne.gif) | ![NGO](./assets/images/exploration/perfcap_experiment8_gifs/NGO.gif) |
+| TBPSA | RealSpacePSO |Shiwa |
+| ![TBPSA](./assets/images/exploration/perfcap_experiment8_gifs/TBPSA.gif) | ![CMA](./assets/images/exploration/perfcap_experiment8_gifs/RealSpacePso.gif) | ![Shiwa](./assets/images/exploration/perfcap_experiment8_gifs/Shiwa.gif) |
+
 #### Optimizer Evaluation
 
 ### Qualitative Results
+
+#### Experiment#2
+![Exp2](./assets/images/qualitative/experiment2.png)
 
 #### Convergence Pose & Visualized Error
 
 #### Optimizer Exploration Evolution
 
-| CMA   |      DE      |  Powell |
+| Experiment#1   |      Experiment#2      |  Experiment#3 |
 |:----------:|:-------------:|:-------------:|
-| ![CMA](./assets/images//vlad1/CMA.gif) | ![CMA](./assets/images//vlad1/DE.gif) | ![CMA](./assets/images//vlad1/Powell.gif) |
-| CMA+Powell | DiscreteOnePlusOne | NGO |
-| ![chainCMAPowell](./assets/images//vlad1/chainCMAPowell.gif) | ![DiscreteOnePlusOne](./assets/images//vlad1/DiscreteOnePlusOne.gif) | ![NGO](./assets/images//vlad1/NGO.gif) |
-| TBPSA | RealSpacePSO |Shiwa |
-| ![TBPSA](./assets/images//vlad1/TBPSA.gif) | ![CMA](./assets/images//vlad1/RealSpacePso.gif) | ![Shiwa](./assets/images//vlad1/Shiwa.gif) |
+| ![exp1](./assets/images/nevergrad/plots/perfcap_experiment1_plots/xpresults.png) | ![exp2](./assets/images/nevergrad/plots/perfcap_experiment2_plots/xpresults.png) | ![exp3](./assets/images/nevergrad/plots/perfcap_experiment3_plots/xpresults.png) |
+| Experiment#4 | Experiment#5 | Experiment#6 |
+| ![exp4](./assets/images/nevergrad/plots/perfcap_experiment4_plots/xpresults.png) | ![exp5](./assets/images/nevergrad/plots/perfcap_experiment5_plots/xpresults.png) | ![exp6](./assets/images/nevergrad/plots/perfcap_experiment6_plots/xpresults.png) |
+| Experiment#7 | Experiment#8 |Experiment#9 |
+| ![exp7](./assets/images/nevergrad/plots/perfcap_experiment7_plots/xpresults.png) | ![exp8](./assets/images/nevergrad/plots/perfcap_experiment8_plots/xpresults.png) | ![exp9](./assets/images/nevergrad/plots/perfcap_experiment9_plots/xpresults.png) |
+| Experiment#10 | Experiment#11 | |
+| ![exp10](./assets/images/nevergrad/plots/perfcap_experiment10_plots/xpresults.png) | ![exp11](./assets/images/nevergrad/plots/perfcap_experiment11_plots/xpresults.png) | |
+
+| Experiment#1   |      Experiment#2      |  Experiment#3 |
+|:----------:|:-------------:|:-------------:|
+| ![exp1](./assets/images/nevergrad/plots/perfcap_experiment1_plots/fight_all.png) | ![exp2](./assets/images/nevergrad/plots/perfcap_experiment2_plots/fight_all.png) | ![exp3](./assets/images/nevergrad/plots/perfcap_experiment3_plots/fight_all.png) |
+| Experiment#4 | Experiment#5 | Experiment#6 |
+| ![exp4](./assets/images/nevergrad/plots/perfcap_experiment4_plots/fight_all.png) | ![exp5](./assets/images/nevergrad/plots/perfcap_experiment5_plots/fight_all.png) | ![exp6](./assets/images/nevergrad/plots/perfcap_experiment6_plots/fight_all.png) |
+| Experiment#7 | Experiment#8 |Experiment#9 |
+| ![exp7](./assets/images/nevergrad/plots/perfcap_experiment7_plots/fight_all.png) | ![exp8](./assets/images/nevergrad/plots/perfcap_experiment8_plots/fight_all.png) | ![exp9](./assets/images/nevergrad/plots/perfcap_experiment9_plots/fight_all.png) |
+| Experiment#10 | Experiment#11 | |
+| ![exp10](./assets/images/nevergrad/plots/perfcap_experiment10_plots/fight_all.png) | ![exp11](./assets/images/nevergrad/plots/perfcap_experiment11_plots/fight_all.png) | |
 
 
 `
