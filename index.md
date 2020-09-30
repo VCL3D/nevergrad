@@ -41,6 +41,7 @@ The different error terms are:
 - an anthropometric penalization of unnatural human poses, <img src="https://render.githubusercontent.com/render/math?math=E_A">
 
 These can be categorized with respect to their domain:
+
 | <img src="https://render.githubusercontent.com/render/math?math=3D">   |      <img src="https://render.githubusercontent.com/render/math?math=2D">      |  Pose |
 |:----------:|:-------------:|:------:|
 | Chamfer distance (<img src="https://render.githubusercontent.com/render/math?math=E_D">) <!-- $E_D$ --> |  Silhouette error (<img src="https://render.githubusercontent.com/render/math?math=E_J">) <!-- $E_J$ --> | Anthropometric prior (<img src="https://render.githubusercontent.com/render/math?math=E_A">) <!-- $E_A$ --> |
@@ -73,6 +74,7 @@ while the **constraints** are provided by:
 - the anthropometric prior term, <img src="https://render.githubusercontent.com/render/math?math=E_A">
 -->
 or a data fitting perspective:
+
 | **Data Terms**   |      **Constraints**      |
 |:----------:|:-------------:|
 | Chamfer distance (<img src="https://render.githubusercontent.com/render/math?math=E_D">) <!-- $E_D$ --> |  Self-penetration error (<img src="https://render.githubusercontent.com/render/math?math=E_P">) <!-- $E_P$ --> |
