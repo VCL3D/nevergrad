@@ -36,7 +36,7 @@ $$
 -->
 
 <p align="center">
-<img src="https://render.githubusercontent.com/render/math?math=E(\mathbf{p})=%20\lambda_J%20E_J(\mathbf{p})%20%2B%20\lambda_D%20E_D(\mathbf{p})%20%2B%20\lambda_S%20E_S(\mathbf{p})%20%2B%20\lambda_P%20E_P(\mathbf{p})%20%2B\lambda_A%20E_A(\mathbf{p}),">
+<img src="https://render.githubusercontent.com/render/math?math=E(\mathbf{p})=%20\lambda_J%20E_J(\mathbf{p})%20%2B%20\lambda_D%20E_D(\mathbf{p})%20%2B%20\lambda_S%20E_S(\mathbf{p})%20%2B%20\lambda_P%20E_P(\mathbf{p})%20%2B\lambda_A%20E_A(\mathbf{p}),"/>
 </p>
 
 <!-- $\mathbf{p}$-->
@@ -91,7 +91,10 @@ or a data fitting perspective:
 
 Our complete objective as formulated above is a linear weighted combination of these terms as weighted by the respective weights <img src="https://render.githubusercontent.com/render/math?math=\lambda"> <!-- $\lambda$ -->. More details can be found in [3].
 
-![Animation](./assets/images/animationc.png)
+<!--![Animation](./assets/images/animationc.png)-->
+<p align="center">
+<img width=500 src="./assets/images/animationc.png"/>
+</p>
 
 ![Errors](./assets/images/errors.png)
 
