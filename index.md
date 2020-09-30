@@ -93,7 +93,6 @@ Our complete objective as formulated above is a linear weighted combination of t
 
 ![Animation](./assets/images/animationc.png)
 
-
 ![Errors](./assets/images/errors.png)
 
 ## Requirements
