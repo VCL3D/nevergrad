@@ -154,6 +154,8 @@ The experiment names can be anything between `perfcap_bench1` and `perfcap_bench
 
 ## Benchmark Server Documentation
 
+When `performance_capture.exe` is run without the `--benchmark_server` flag, it can be used to load a project file and inspect data and show some visualizations of selected individual error terms.
+
 ## Logging
 
 ### Nevergrad Logging
