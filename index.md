@@ -225,6 +225,13 @@ Each benchmark experiment can be configured via editing the files located in `be
 
 #### Optimizer Exploration Evolution
 
+| CMA   |      DE      |  Powell |
+|:----------:|:-------------:|:-------------:|
+| ![CMA](./assets/images//vlad1/CMA.gif) | ![CMA](./assets/images//vlad1/DE.gif) | ![CMA](./assets/images//vlad1/Powell.gif) |
+| CMA+Powell | DiscreteOnePlusOne | NGO |
+| ![chainCMAPowell](./assets/images//vlad1/chainCMAPowell.gif) | ![DiscreteOnePlusOne](./assets/images//vlad1/DiscreteOnePlusOne.gif) | ![NGO](./assets/images//vlad1/NGO.gif) |
+| TBPSA | RealSpacePSO |Shiwa |
+| ![TBPSA](./assets/images//vlad1/TBPSA.gif) | ![CMA](./assets/images//vlad1/RealSpacePso.gif) | ![Shiwa](./assets/images//vlad1/Shiwa.gif) |
 
 
 `
