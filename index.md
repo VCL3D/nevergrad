@@ -20,15 +20,15 @@ To realize the concept, along with this pull request, we release Windows binarie
 
 ### Project
 
-A Project consists of sensed 3D data captured during the performance recording of a single human and a constructed animatable template of the performer.
+A **project** consists of sensed 3D data captured during the performance recording of a single human and a constructed animatable template of the performer.
 
 ### Experiment
 
-As an experiment we define the problem of fitting the subject's template 3D mesh to a specific target frame of the captured performance. Each experiment instance is tightly bound to a project. Further, an experiment instance is bound to a specific objective function parameterization and to a specific optimizer under a pre-defined budget. Objective function parameterization consists of defining a subset of template's animation variables to optimize against (i.e. locking/excluding some degrees of freedom for some joints) and specifying weights of individual error terms.
+As an **experiment** we define the problem of fitting the subject's template 3D mesh to a specific target frame of the captured performance. Each experiment instance is tightly bound to a project. Further, an experiment instance is bound to a specific objective function parameterization and to a specific optimizer under a pre-defined budget. Objective function parameterization consists of defining a subset of template's animation variables to optimize against (i.e. locking/excluding some degrees of freedom for some joints) and specifying weights of individual error terms.
 
 ### Objective Function
 
-The objective function of each experiment is a weighted linear combination of five individual error terms:
+The **objective function** of each experiment is a weighted linear combination of five individual error terms:
 <!--
 $$
 E(\mathbf{p})= \lambda_J E_J(\mathbf{p}) + \lambda_D E_D(\mathbf{p}) + \lambda_S E_S(\mathbf{p}) + \lambda_P E_P(\mathbf{p}) +\lambda_A E_A(\mathbf{p}),
