@@ -1,5 +1,5 @@
-title: Title
-description: Documentation
+title: Nevergrad
+description: Documentation for the Performance Capture Benchmark
 baseurl: "/nevergrad" # the subpath of your site, e.g. /blog
 url: "https://alexd314.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
