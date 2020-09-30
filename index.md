@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Perfcap Benchmark
-nav_order: 3
+nav_order: 1
 description: "Documentation page for the Nevergrad Performance Capture Benchmark"
 permalink: /
 ---
