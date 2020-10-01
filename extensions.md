@@ -28,7 +28,8 @@ Each benchmark experiment can be configured via editing the files located in `be
                         #(i.e. initial point of the optimizer)
     {
         "joint_id": -1, # joint ids are integers in range [-1,17],
-                        # with -1 being the translation of the root joint in meters # and the reset of the joint_ids corresponding to the
+                        # with -1 being the translation of the root joint in meters
+                        # and the rest of the joint_ids corresponding to the
                         # respective joint rotations in degrees.
         "values":[0, 0, 0]  # list of 3 floating point numbers each one
                             #corresponding to a value for each one of the
