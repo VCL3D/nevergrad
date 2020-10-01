@@ -12,7 +12,7 @@ This pull request has been tested with Python 3.8.2. As of 30th September 2020, 
 - [RabbitMQ](https://www.rabbitmq.com/)
 
 Additional requirements for the Nevergrad Performance Capture Benchmark Client:
-- aio-pika 6.6.1
+- aio-pika 6.6.1 (`pip install aio-pika==6.6.1`)
 
 Requirements for Performance Capture Benchmark Server:
 
