@@ -12,22 +12,34 @@ description: "Benchmark Results"
 | Experiment#1   |      Experiment#2      |  Experiment#3 |
 |:----------:|:-------------:|:-------------:|
 | ![exp1](./assets/images/nevergrad/plots/perfcap_experiment1_plots/xpresults.png) | ![exp2](./assets/images/nevergrad/plots/perfcap_experiment2_plots/xpresults.png) | ![exp3](./assets/images/nevergrad/plots/perfcap_experiment3_plots/xpresults.png) |
+
 | Experiment#4 | Experiment#5 | Experiment#6 |
+|:----------:|:-------------:|:-------------:|
 | ![exp4](./assets/images/nevergrad/plots/perfcap_experiment4_plots/xpresults.png) | ![exp5](./assets/images/nevergrad/plots/perfcap_experiment5_plots/xpresults.png) | ![exp6](./assets/images/nevergrad/plots/perfcap_experiment6_plots/xpresults.png) |
+
 | Experiment#7 | Experiment#8 |Experiment#9 |
+|:----------:|:-------------:|:-------------:|
 | ![exp7](./assets/images/nevergrad/plots/perfcap_experiment7_plots/xpresults.png) | ![exp8](./assets/images/nevergrad/plots/perfcap_experiment8_plots/xpresults.png) | ![exp9](./assets/images/nevergrad/plots/perfcap_experiment9_plots/xpresults.png) |
+
 | Experiment#10 | Experiment#11 | |
+|:----------:|:-------------:|:-------------:|
 | ![exp10](./assets/images/nevergrad/plots/perfcap_experiment10_plots/xpresults.png) | ![exp11](./assets/images/nevergrad/plots/perfcap_experiment11_plots/xpresults.png) | |
 
 
 | Experiment#1   |      Experiment#2      |  Experiment#3 |
 |:----------:|:-------------:|:-------------:|
 | ![exp1](./assets/images/nevergrad/plots/perfcap_experiment1_plots/fight_all.png) | ![exp2](./assets/images/nevergrad/plots/perfcap_experiment2_plots/fight_all.png) | ![exp3](./assets/images/nevergrad/plots/perfcap_experiment3_plots/fight_all.png) |
+
 | Experiment#4 | Experiment#5 | Experiment#6 |
+|:----------:|:-------------:|:-------------:|
 | ![exp4](./assets/images/nevergrad/plots/perfcap_experiment4_plots/fight_all.png) | ![exp5](./assets/images/nevergrad/plots/perfcap_experiment5_plots/fight_all.png) | ![exp6](./assets/images/nevergrad/plots/perfcap_experiment6_plots/fight_all.png) |
+
 | Experiment#7 | Experiment#8 |Experiment#9 |
+|:----------:|:-------------:|:-------------:|
 | ![exp7](./assets/images/nevergrad/plots/perfcap_experiment7_plots/fight_all.png) | ![exp8](./assets/images/nevergrad/plots/perfcap_experiment8_plots/fight_all.png) | ![exp9](./assets/images/nevergrad/plots/perfcap_experiment9_plots/fight_all.png) |
+
 | Experiment#10 | Experiment#11 | |
+|:----------:|:-------------:|:-------------:|
 | ![exp10](./assets/images/nevergrad/plots/perfcap_experiment10_plots/fight_all.png) | ![exp11](./assets/images/nevergrad/plots/perfcap_experiment11_plots/fight_all.png) | |
 
 
@@ -60,14 +72,16 @@ description: "Benchmark Results"
 |        Shiwa       |  0.029989107 |  0.030442139 |  0.035854152 |  0.031325774 |  0.032663181 |  0.026518686 |  0.037352712 |  0.024697134 |  0.031306676 |  0.042707948  |  0.039220132  | 0.032916149 |
 |        TBPSA       |  0.064344674 |  0.043877142 |  0.069670507 |  0.059741623 |  0.054157782 |  0.050795536 |  0.061386211 |  0.026785022 |  0.045028812 |  0.067978396  |  0.053731953  | 0.054317969 |
 
-![LossVSBudget](./assets/images/quantitative/loss_vs_budget.png)
-![HausVSBudget](./assets/images/quantitative/hauss_vs_budget.png)
+| Experiment#1   |      Experiment#2      |
+|:----------:|:-------------:|:-------------:|
+| ![LossVSBudget](./assets/images/quantitative/loss_vs_budget.png) | ![HausVSBudget](./assets/images/quantitative/hauss_vs_budget.png) |
 
 # Qualitative Results
 
 ## Visualized Error on the Converged Poses
 
 ### Experiment#2
+
 ![Exp2_1](./assets/images/qualitative/experiment2_1.png)
 ![Exp2_2](./assets/images/qualitative/experiment2_2.png)
 
