@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Logs
+title: Benchmark Logs
 nav_order: 6
 description: "Logging Details"
 ---

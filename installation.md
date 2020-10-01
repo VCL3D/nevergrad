@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Installation
+title: Benchmark Execution 
 nav_order: 2
 description: "Requirements and Installation"
 ---
