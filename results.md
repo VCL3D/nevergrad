@@ -127,4 +127,4 @@ description: "Benchmark Results"
 
 | TBPSA | RealSpacePSO | Shiwa |
 |:----------:|:-------------:|:-------------:|
-| ![TBPSA#10](./assets/images/exploration/perfcap_experiment10_gifs/TBPSA.gif) | ![RealSpacePSO#10](../assets/images/exploration/perfcap_experiment10_gifs/RealSpacePSO.gif) | ![Shiwa#10](./assets/images/exploration/perfcap_experiment10_gifs/Shiwa.gif) |
+| ![TBPSA#10](./assets/images/exploration/perfcap_experiment10_gifs/TBPSA.gif) | ![RealSpacePSO#10](./assets/images/exploration/perfcap_experiment10_gifs/RSPSO.gif) | ![Shiwa#10](./assets/images/exploration/perfcap_experiment10_gifs/Shiwa.gif) |
