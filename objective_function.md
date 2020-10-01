@@ -72,7 +72,7 @@ Our complete objective as formulated above is a linear weighted combination of t
 
 Each pose parameter vector <img src="https://render.githubusercontent.com/render/math?math=\mathbf{p}:=\{\mathbf{R},\mathbf{t},\boldsymbol{\theta}\}">, corresponds to a global root rotation <img src="https://render.githubusercontent.com/render/math?math=\mathbf{R}\in\mathbb{R}^3"> and translation <img src="https://render.githubusercontent.com/render/math?math=\mathbf{t}\in\mathbb{R}^3">, as well as per joint <img src="https://render.githubusercontent.com/render/math?math=j\in[1, J]"> rotation parameters <img src="https://render.githubusercontent.com/render/math?math=\boldsymbol{\theta}\in\mathbb{R}^{h\times3}"> for all joints <img src="https://render.githubusercontent.com/render/math?math=J">,parameterized by their exponential map __\[[1](#ExpMap)\]__.
 All template meshes are automatically skinned and rigged with __\[[2](#Pinocchio)\]__.
-By animating the rigged and skinned template with the pose parameters <img src="https://render.githubusercontent.com/render/math?math=\mathbf{p}"> we get a re-posed mesh of the template <img src="https://render.githubusercontent.com/render/math?math=\mathbf{\hat{V}}=DQS(\mathbf{V},\mathbf{p})">.
+By animating the rigged and skinned template with the pose parameters <img src="https://render.githubusercontent.com/render/math?math=\mathbf{p}"> we get a re-posed mesh of the template <img src="https://render.githubusercontent.com/render/math?math=\mathbf{\hat{V},\hat{N}}=DQS(\mathbf{V},\mathbf{N},\mathbf{p})">, with <img src="https://render.githubusercontent.com/render/math?math=\mathbf{\hat{V}}"> and <img src="https://render.githubusercontent.com/render/math?math=\mathbf{\hat{N}}"> the template's vertices and normals respectively (connectivity, _i.e._ triangles/faces remain consistent).
 For animation we use dual quaternion skinning (DQS) __\[[3](#DQS)\]__.
 
 <p align="center">
@@ -88,6 +88,10 @@ Thus our <img src="https://render.githubusercontent.com/render/math?math=3D"> er
     
     where a sampling operation <img src="https://render.githubusercontent.com/render/math?math=\mathcal{S}"> defined on the EDT grid, samples the distance at each animated vertex <img src="https://render.githubusercontent.com/render/math?math=\mathbf{v}">, clamped within the confines of the bounding box that the EDT was calculated in through <img src="https://render.githubusercontent.com/render/math?math=\lfloor . \rfloor">.
     Given that pose parameters <img src="https://render.githubusercontent.com/render/math?math=\mathbf{p}"> may be explored outside the bounding box that the EDT is defined in, we further supplement the sampled distance, with an approximate distance that is negligible within the bounding box, but allows the error to extrapolate outside its bounds and offer meaningful evaluations.
+
+- <p align="left"><img width=350 src="https://render.githubusercontent.com/render/math?math=E_S=\frac{1}{V}\sum_{(\mathbf{v},\mathbf{n})\in(\mathbf{\hat{V}},\mathbf{\hat{N}})}1-\langle\nabla\mathcal{S}_{\mathbf{P}}(\mathbf{G},\mathbf{\lfloor\!v\rfloor}),\mathbf{n}\rangle^2"></p>
+
+    which represents a surface alignment error using the gradient of the distance field and the animated template's surface normals.
 
 ![Errors](./assets/images/errors.png)
 
