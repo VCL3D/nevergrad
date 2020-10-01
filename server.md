@@ -5,6 +5,8 @@ nav_order: 5
 description: "The Benchmark Server Application"
 ---
 
+# The Perfcap Application
+
 When `performance_capture.exe` is run without the `--benchmark_server` flag and without any additional command line arguments, it can be used to load a project file in order to inspect data and see some visualizations of selected individual error terms.
 
 1. To open a project click `File -> Open`.
