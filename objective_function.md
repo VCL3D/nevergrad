@@ -72,7 +72,7 @@ Our complete objective as formulated above is a linear weighted combination of t
 
 <!--![Animation](./assets/images/animationc.png)-->
 <p align="center">
-<img width=500 src="./assets/images/animationc.png"/>
+<img width=500 src="./assets/images/animation.png"/>
 </p>
 
 ![Errors](./assets/images/errors.png)
