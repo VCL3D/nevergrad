@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Benchmark Server
+title: Performance Capture Application
 nav_order: 5
-description: "The Benchmark Server Application"
+description: "The Performance Capture Application"
 ---
 
 # The Performance Capture Application

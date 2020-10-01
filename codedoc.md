@@ -5,7 +5,7 @@ nav_order: 9
 description: "Implementation documentation"
 ---
 
-# Performance Benchmark Server API
+# Performance Capture Benchmark Server API
 
 The API of the benchmark server is based on JSON messages communicated over RabbitMQ. The API is based on a request-response pattern, i.e. for each request received by the nevergrad benchmark client, there is a corresponding response message from the benchmark server. Each request message is given a unique (UUID) `transaction_id` identifying the request. The benchmark server embeds `transaction_id` to its replies, to allow for the client to match the response to its outgoing request (this scheme makes easier support for batched requests and multi-threading/multi-processing in the client side). Further, request messages contain a `reply_id` field which is used by the benchmark server as a RabbitMQ `routing_key` in order to route the reply to a specific nevergrad benchmark client instance (this is again to support for multi-processing in client-side (i.e starting the benchmark with `--num_workers` greater than 1)).
 
