@@ -43,7 +43,7 @@ heading_anchors: true
 
 # Aux links for the upper right navigation
 aux_links:
-  "Performance Capture Benchmarking with Nevergad":
+  "Performance Capture Benchmarking with Never  gad":
     - "//github.com/alexd314/nevergrad/tree/perfcap_benchmark"
 
 # Makes Aux links open in a new tab. Default is false
