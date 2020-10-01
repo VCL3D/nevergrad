@@ -60,14 +60,14 @@ nav_sort: case_sensitive # Capital letters sorted before lowercase
 back_to_top: true
 back_to_top_text: "Back to top"
 
-footer_content: "<a href=\"vcl3d.github.io\">Visual Computing Lab</a>"
+footer_content: "<a href=\"https://vcl3d.github.io\">Visual Computing Lab</a>"
 
 # Footer last edited timestamp
 last_edit_timestamp: true # show or hide edit time - page must have `last_modified_date` defined in the frontmatter
 last_edit_time_format: "%b %e %Y at %I:%M %p" # uses ruby's time format: https://ruby-doc.org/stdlib-2.7.0/libdoc/time/rdoc/Time.html
 
 # Footer "Edit this page on GitHub" link text
-gh_edit_link: true # show or hide edit this page link
+gh_edit_link: false # show or hide edit this page link
 gh_edit_link_text: "Edit this page on GitHub"
 gh_edit_repository: "https://github.com/alexd314/nevergrad/" # the github URL for your repo
 gh_edit_branch: "perfcap_benchmark" # the branch that your docs is served from
