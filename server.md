@@ -50,7 +50,7 @@ A screenshot of the depicted target and animated meshes is given below:
 <img width=350 src="../assets/images/perfcap/meshes.png"/>
 </p>
     
-    Sample visualization of chamfer and silhouette error terms as we move the elbow of the animated template are given next:
+Sample visualization of chamfer and silhouette error terms as we move the elbow of the animated template are given next:
 
 <p align="center">
 <img width=500 src="../assets/images/perfcap/mesh_error_vis1.gif"/>
