@@ -68,6 +68,7 @@ description: "Quantitative Benchmark Results"
     | ![plot_project10](./assets/images/nevergrad/plots/perfcap_experiment10_plots/xpresults.png) | ![compare_project10](./assets/images/nevergrad/plots/perfcap_experiment10_plots/fight_all.png) |
 
 - **Project#11**
+
     | Plot | Comparison |
     |:-------:|:-------:|
     | ![plot_project11](./assets/images/nevergrad/plots/perfcap_experiment11_plots/xpresults.png) | ![compare_project11](./assets/images/nevergrad/plots/perfcap_experiment11_plots/fight_all.png) |
