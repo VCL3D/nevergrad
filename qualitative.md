@@ -12,7 +12,7 @@ description: "Qualitative Benchmark Results"
 ![Exp2_1](./assets/images/qualitative/experiment2/experiment2_1.png)
 ![Exp2_2](./assets/images/qualitative/experiment2/experiment2_2.png)
 
-More Results Coming Soon 
+More Projects Coming Soon 
 {: .label .label-purple }
 
 # Optimizer Exploration Evolution
@@ -58,3 +58,6 @@ More Results Coming Soon
     | TBPSA | RealSpacePSO | Shiwa |
     |:----------:|:-------------:|:-------------:|
     | ![TBPSA#10](./assets/images/exploration/perfcap_experiment10_gifs/TBPSA.gif) | ![RealSpacePSO#10](./assets/images/exploration/perfcap_experiment10_gifs/RSPSO.gif) | ![Shiwa#10](./assets/images/exploration/perfcap_experiment10_gifs/Shiwa.gif) |
+
+More Projects Coming Soon 
+{: .label .label-purple }
