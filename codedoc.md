@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Implementation documentation
+title: Implementation
 nav_order: 9
-description: "Code architecture documentation"
+description: "Implementation documentation"
 ---
 
 # Performance Benchmark Server API
