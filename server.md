@@ -12,19 +12,19 @@ When `performance_capture.exe` is run without the `--benchmark_server` flag and 
 2. Use the widget manager to show groups of additional widgets. The first button enable the `Player` and `Visualization` widgets, while the second enables `Error Selector`, `Errors` and `Pose Parameters` widgets
 
 <p align="center">
-<img width=100 src="./assets/images/perfcap/widget_manager.png"/>
+<img width=100 src="../assets/images/perfcap/widget_manager.png"/>
 </p>
 
 2. Use the player widget to navigate throughout the recoding.
     
 <p align="center">
-<img width=250 src="./assets/images/perfcap/player.png"/>
+<img width=250 src="../assets/images/perfcap/player.png"/>
 </p>
 
 3. Use the `Visualizations` widget to enable additional visualizations
     
 <p align="center">
-<img width=150 src="./assets/images/perfcap/visualizations.png"/>
+<img width=150 src="../assets/images/perfcap/visualizations.png"/>
 </p>
 
     - Show Axis Triad: Enable visualization of the global 3D coordinate system at origin (0,0,0)
@@ -47,36 +47,36 @@ When `performance_capture.exe` is run without the `--benchmark_server` flag and 
     A screenshot of the depicted target and animated meshes is given below:
     
 <p align="center">
-<img width=350 src="./assets/images/perfcap/meshes.png"/>
+<img width=350 src="../assets/images/perfcap/meshes.png"/>
 </p>
     
     Sample visualization of chamfer and silhouette error terms as we move the elbow of the animated template are given next:
 
 <p align="center">
-<img width=500 src="./assets/images/perfcap/mesh_error_vis1.gif"/>
+<img width=500 src="../assets/images/perfcap/mesh_error_vis1.gif"/>
 </p>
 
 <p align="center">
-<img width=500 src="./assets/images/perfcap/mesh_error_vis2.gif"/>
+<img width=500 src="../assets/images/perfcap/mesh_error_vis2.gif"/>
 </p>
 
 4. The `Pose Parameters` widget allows controlling the animated pose of the template mesh. Use this widget to set specific individual values to each joint's orientation and the root joint's translation. All values are in degrees, except for the root translation which is measured in meters. Make sure you check `Show Pose Values` in order to have the ability to edit the animatable parameters of the template mesh. Choose skinning type between `Dual Quaternion` and `Linear` (pick `Dual Quaternion` for higher quality skinning). Click reset to zero out all animation parameters (i.e. revert animated mesh to its default pose).
 
 <p align="center">
-<img width=350 src="./assets/images/perfcap/pose_params_dont_show.png"/>
+<img width=350 src="../assets/images/perfcap/pose_params_dont_show.png"/>
 </p>
 <p align="center">
-<img width=400 src="./assets/images/perfcap/pose_params_show.png"/>
+<img width=400 src="../assets/images/perfcap/pose_params_show.png"/>
 </p>
 
 4. Use the `Error selector` to select and enable computation of individual error terms. After making your selection, press `Refresh Frame` once. Evaluation of the error terms is executed after each modification of the animate template's pose parameters in the `Pose Parameters` widget.
     
 <p align="center">
-<img width=200 src="./assets/images/perfcap/error_selector.png"/>
+<img width=200 src="../assets/images/perfcap/error_selector.png"/>
 </p>
 
 5. Use the `Errors` widget to inspect individual error term values and small graphs, as you play with pose parameters in the `Pose Parameters widget`
 
 <p align="center">
-<img width=300 src="./assets/images/perfcap/error_vis.png"/>
+<img width=300 src="../assets/images/perfcap/error_vis.png"/>
 </p>
