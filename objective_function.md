@@ -81,19 +81,33 @@ For animation we use dual quaternion skinning (DQS) __\[[3](#DQS)\]__.
 
 Four error functions are formulated indirectly to the optimized variables through the animated mesh, while the anthropometric prior <img src="https://render.githubusercontent.com/render/math?math=E_A"> is calculated solely on the pose parameters <img src="https://render.githubusercontent.com/render/math?math=\mathbf{p}">.
 
-Regarding the former, we first calculate the Euclidean Distance Transform (EDT) using a separable Chamfer implementation __\[[4](#Chamfer)\]__ defined on a voxel grid <img src="https://render.githubusercontent.com/render/math?math=\mathbf{G}"> whose bounding box is tightly calculated using the input live data.
+Regarding the former, we first calculate the **Euclidean Distance Transform** (EDT) using a separable Chamfer implementation __\[[4](#Chamfer)\]__ defined on a voxel grid <img src="https://render.githubusercontent.com/render/math?math=\mathbf{G}"> whose bounding box is tightly calculated using the input live data.
 Thus our <img src="https://render.githubusercontent.com/render/math?math=3D"> error terms are defined:
 
 - <p align="left"><img width=350 src="https://render.githubusercontent.com/render/math?math=E_D=\frac{1}{V}\sum_{\mathbf{v}\in\mathbf{\hat{V}}}\mathcal{S}_\mathbf{P}(\mathbf{G},\lfloor\mathbf{v}\rfloor)%2B||\mathbf{v}-\lfloor\mathbf{v}\rfloor||_2"></p>
     
-    where a sampling operation <img src="https://render.githubusercontent.com/render/math?math=\mathcal{S}"> defined on the EDT grid, samples the distance at each animated vertex <img src="https://render.githubusercontent.com/render/math?math=\mathbf{v}">, clamped within the confines of the bounding box that the EDT was calculated in through <img src="https://render.githubusercontent.com/render/math?math=\lfloor . \rfloor">.
+    where a sampling operation <img src="https://render.githubusercontent.com/render/math?math=\mathcal{S}"> defined on the EDT grid, samples the **distance** at each animated vertex <img src="https://render.githubusercontent.com/render/math?math=\mathbf{v}">, clamped within the confines of the bounding box that the EDT was calculated in through <img src="https://render.githubusercontent.com/render/math?math=\lfloor . \rfloor">.
     Given that pose parameters <img src="https://render.githubusercontent.com/render/math?math=\mathbf{p}"> may be explored outside the bounding box that the EDT is defined in, we further supplement the sampled distance, with an approximate distance that is negligible within the bounding box, but allows the error to extrapolate outside its bounds and offer meaningful evaluations.
 
 - <p align="left"><img width=350 src="https://render.githubusercontent.com/render/math?math=E_S=\frac{1}{V}\sum_{(\mathbf{v},\mathbf{n})\in(\mathbf{\hat{V}},\mathbf{\hat{N}})}1-\langle\nabla\mathcal{S}_{\mathbf{P}}(\mathbf{G},\mathbf{\lfloor\!v\rfloor}),\mathbf{n}\rangle^2"></p>
 
-    which represents a surface alignment error using the gradient of the distance field and the animated template's surface normals.
+    which represents a **surface alignment** error using the gradient of the distance field and the animated template's surface normals.
+    Both <img src="https://render.githubusercontent.com/render/math?math=E_D"> and <img src="https://render.githubusercontent.com/render/math?math=E_S"> provide a combined animated-to-live distance.
+
+- <p align="left"><img width=350 src="https://render.githubusercontent.com/render/math?math=E_P=\sum_{\mathbf{v_q}\in\mathbf{\hat{V}^{q}}}\sum_{j \in \mathbf{J}}\prod_{a}\epsilon_a(\mathbf{v}_q,\mathbf{T}_j),"></p>
+
+    which enforces a penalization of **unnatural poses** (body parts being inside, _i.e._ penetrating, other body parts).
+    We use a coarse proxy of the template to avoid excessive computational costs, with <img src="https://render.githubusercontent.com/render/math?math=\epsilon"> being a binary function that tests whether the query vertex <img src="https://render.githubusercontent.com/render/math?math=\mathbf{v}_q"> is inside the body part proxy shape. 
+
+Finally, we also employ a projective <img src="https://render.githubusercontent.com/render/math?math=2D"> error:
+
+- <p align="left"><img width=250 src="https://render.githubusercontent.com/render/math?math=E_J(\mathbf{p})=\frac{1}{K}\sum_k^K1-\frac{\mathbf{M}^P_k\cap\mathbf{M}^A_k}{\mathbf{M}^P_k\cup\mathbf{M}^A_k}"></p>
+
+    which represents a **Jaccard** metric of (dis-)similarity, otherwise known as intersection-over-union (_IoU_).
+    This is defined after rendering the silhouette images of the live <img src="https://render.githubusercontent.com/render/math?math=\mathbf{M}^P_k"> and animated meshes <img src="https://render.githubusercontent.com/render/math?math=\mathbf{M}^A_k"> at each <img src="https://render.githubusercontent.com/render/math?math=k\inK"> input viewpoints.
 
 ![Errors](./assets/images/errors.png)
+
 
 
 
