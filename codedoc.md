@@ -25,25 +25,25 @@ Their request-response API message definitions are given below.
 #### Request
 ```json
 {
-	"request_info": {
-		"reply_id": "ccdf242c-9efa-4023-9ecc-5096d7e21321",
-		"transaction_id":"0abaa9d6-363f-4b8b-a46d-baf2b7217b74"
-	},
-	"args": {
-		"action" : "set_experiment",
-		"experiment_id": 1,
-		"project_file_path": "./data/Ballet/Ballet.perfproj",
-		"frame_index": 25,
-		"error_weights": {
-			"silhouette": 0.1,
+    "request_info": {
+        "reply_id": "ccdf242c-9efa-4023-9ecc-5096d7e21321",
+        "transaction_id":"0abaa9d6-363f-4b8b-a46d-baf2b7217b74"
+    },
+    "args": {
+        "action" : "set_experiment",
+        "experiment_id": 1,
+        "project_file_path": "./data/Ballet/Ballet.perfproj",
+        "frame_index": 25,
+        "error_weights": {
+            "silhouette": 0.1,
             "chamfer_total": 1.0,
             "chamfer_interpenetration": 1.0,
             "surface_gradient_error": 0.01,
             "self_penetration": 1.0,
             "anthropomorfic_constraints":1.0,
             "point2plane" : 0.1
-		}
-	}
+        }
+    }
 }
 ```
 - `experiment_id`: must be the integer designated in the `experiment{X}.json` included in the folder `nevergrad/benchmark/perfcap/experiment_configuration`. This is to facilitate logging. The target mesh of the benchmark instance is always saved in `benchmark_server/live_meshes/experiment_{experiment_id}.ply`.
@@ -57,13 +57,13 @@ The `set_experiment` message is effective only the first time it is received by 
 
 ```json
 {
-	"reply_info": {
-		"transaction_id":"0abaa9d6-363f-4b8b-a46d-baf2b7217b74"
-	},
-	"args": {
-		"status" : 0,
-		"message" : "Experiment set successfully"
-	}
+    "reply_info": {
+        "transaction_id":"0abaa9d6-363f-4b8b-a46d-baf2b7217b74"
+    },
+    "args": {
+        "status" : 0,
+        "message" : "Experiment set successfully"
+    }
 }
 ```
 `status`: can be either 0 (Success) or 1 (Failure)
@@ -75,14 +75,14 @@ The `set_experiment` message is effective only the first time it is received by 
 #### Request
 ```json
 {
-	"request_info": {
-		"reply_id": "ccdf242c-9efa-4023-9ecc-5096d7e21321",
-		"transaction_id":"0cc239f1-363f-4b8b-a46d-ddf212345555"
-	},
-	"args": {
-		"action" : "start_experiment",
-		"experiment_tag_id" : "0f65dabf-3381-4b2e-9f9a-2b65f8e5e850"
-	}
+    "request_info": {
+        "reply_id": "ccdf242c-9efa-4023-9ecc-5096d7e21321",
+        "transaction_id":"0cc239f1-363f-4b8b-a46d-ddf212345555"
+    },
+    "args": {
+        "action" : "start_experiment",
+        "experiment_tag_id" : "0f65dabf-3381-4b2e-9f9a-2b65f8e5e850"
+    }
 }
 ```
 
@@ -95,13 +95,13 @@ In the benchmark client code-base this is also reffered as "experiment registrat
 
 ```json
 {
-	"reply_info": {
-		"transaction_id":"0cc239f1-363f-4b8b-a46d-ddf212345555"
-	},
-	"args": {
-		"status" : 0,
-		"message" : "Experiment successfully started"
-	}
+    "reply_info": {
+        "transaction_id":"0cc239f1-363f-4b8b-a46d-ddf212345555"
+    },
+    "args": {
+        "status" : 0,
+        "message" : "Experiment successfully started"
+    }
 }
 ```
 `status`: can be either 0 (Success) or 1 (Failure)
@@ -112,21 +112,21 @@ In the benchmark client code-base this is also reffered as "experiment registrat
 #### Request
 ```json
 {
-	"request_info": {
-		"reply_id": "ccdf242c-9efa-4023-9ecc-5096d7e21321",
-		"transaction_id":"0cd239d-363f-4b8b-a46d-ddf2d23455dd"
-	},
-	"args": {
-		"action" : "stop_experiment",
-		"experiment_tag_id" : "0f65dabf-3381-4b2e-9f9a-2b65f8e5e850",
-		"pose" : [
-			{
-				"joint_id" : -1,
-				"values" : [0.0, 0.0, 0.0]
-			},
-			...
-		]
-	}
+    "request_info": {
+        "reply_id": "ccdf242c-9efa-4023-9ecc-5096d7e21321",
+        "transaction_id":"0cd239d-363f-4b8b-a46d-ddf2d23455dd"
+    },
+    "args": {
+        "action" : "stop_experiment",
+        "experiment_tag_id" : "0f65dabf-3381-4b2e-9f9a-2b65f8e5e850",
+        "pose" : [
+            {
+                "joint_id" : -1,
+                "values" : [0.0, 0.0, 0.0]
+            },
+            ...
+        ]
+    }
 }
 ```
 
@@ -139,13 +139,13 @@ This messages flushes benchmark server logs for the experiment specified by `exp
 
 ```json
 {
-	"reply_info": {
-		"transaction_id":"0cd239d-363f-4b8b-a46d-ddf2d23455dd"
-	},
-	"args": {
-		"status" : 0,
-		"message" : "Experiment successfully stoped"
-	}
+    "reply_info": {
+        "transaction_id":"0cd239d-363f-4b8b-a46d-ddf2d23455dd"
+    },
+    "args": {
+        "status" : 0,
+        "message" : "Experiment successfully stoped"
+    }
 }
 ```
 
@@ -157,27 +157,27 @@ This messages flushes benchmark server logs for the experiment specified by `exp
 #### Request
 ```json
 {
-	"request_info": {
-		"reply_id": "ccdf242c-9efa-4023-9ecc-5096d7e21321",
-		"transaction_id":"0cd2ffd-363f-4b8b-f46d-ddf2d2f45fdd"
-	},
-	"args": {
-		"action" : "function_evaluation",
-		"experiment_id": 1,
-		"experiment_tag_id" : "0f65dabf-3381-4b2e-9f9a-2b65f8e5e850",
-		"pose" :
-			[
-				{
-					"joint_id" : -1,
-					"values" : [1.0,2.0,3.0]
-				},
-				{
-					"joint_id" : 0,
-					"values" : [3.0,4.0,5.0]
-				}
-			]
+    "request_info": {
+        "reply_id": "ccdf242c-9efa-4023-9ecc-5096d7e21321",
+        "transaction_id":"0cd2ffd-363f-4b8b-f46d-ddf2d2f45fdd"
+    },
+    "args": {
+        "action" : "function_evaluation",
+        "experiment_id": 1,
+        "experiment_tag_id" : "0f65dabf-3381-4b2e-9f9a-2b65f8e5e850",
+        "pose" :
+            [
+                {
+                    "joint_id" : -1,
+                    "values" : [1.0,2.0,3.0]
+                },
+                {
+                    "joint_id" : 0,
+                    "values" : [3.0,4.0,5.0]
+                }
+            ]
 
-	}
+    }
 }
 ```
 
