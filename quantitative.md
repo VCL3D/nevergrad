@@ -113,6 +113,7 @@ Results with respect to standard metric (symmetric Hausorff distance) for a budg
 ## Combined
 
 Results with respect to standard metric (symmetric Hausorff distance) across all budgets (**2000**, **4000**, **7000**):
+
 | Loss   |      Hausorff      |
 |:----------:|:-------------:|:-------------:|
 | ![LossVSBudget](./assets/images/quantitative/loss_vs_budget.png) | ![HausVSBudget](./assets/images/quantitative/hauss_vs_budget.png) |
