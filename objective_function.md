@@ -70,8 +70,7 @@ or a data fitting perspective:
 
 Our complete objective as formulated above is a linear weighted combination of these terms as weighted by the respective weights <img src="https://render.githubusercontent.com/render/math?math=\lambda"> <!-- $\lambda$ -->. More details can be found in [3].
 
-Each pose parameter vector <img src="https://render.githubusercontent.com/render/math?math=\mathbf{p}:=\{\mathbf{R},\mathbf{t},\boldsymbol{\theta}\}">, corresponds to a global root rotation <img src="https://render.githubusercontent.com/render/math?math=\mathbf{R}\in\mathbb{R}^3"> and translation <img src="https://render.githubusercontent.com/render/math?math=\mathbf{t}\in\mathbb{R}^3">, as well as per joint <img src="https://render.githubusercontent.com/render/math?math=j\in[1, J]"> rotation parameters <img src="https://render.githubusercontent.com/render/math?math=\boldsymbol{\theta}\in\mathbb{R}^{h\times3}"> for all joints <img src="https://render.githubusercontent.com/render/math?math=J">. 
-The latter are parameterized with the exponential map 
+Each pose parameter vector <img src="https://render.githubusercontent.com/render/math?math=\mathbf{p}:=\{\mathbf{R},\mathbf{t},\boldsymbol{\theta}\}">, corresponds to a global root rotation <img src="https://render.githubusercontent.com/render/math?math=\mathbf{R}\in\mathbb{R}^3"> and translation <img src="https://render.githubusercontent.com/render/math?math=\mathbf{t}\in\mathbb{R}^3">, as well as per joint <img src="https://render.githubusercontent.com/render/math?math=j\in[1, J]"> rotation parameters <img src="https://render.githubusercontent.com/render/math?math=\boldsymbol{\theta}\in\mathbb{R}^{h\times3}"> for all joints <img src="https://render.githubusercontent.com/render/math?math=J">,parameterized by their exponential map (__\[[1](#ExpMap)\]__).
 
 
 <!--![Animation](./assets/images/animationc.png)-->
@@ -80,3 +79,7 @@ The latter are parameterized with the exponential map
 </p>
 
 ![Errors](./assets/images/errors.png)
+
+
+
+<a name="ExpMap"/>__[1]__ Grassia, F. S. (1998). Practical parameterization of rotations using the exponential map. Journal of graphics tools, 3(3), 29-48.
