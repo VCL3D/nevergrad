@@ -27,24 +27,24 @@ When `performance_capture.exe` is run without the `--benchmark_server` flag and 
 <img width=150 src="../assets/images/perfcap/visualizations.png"/>
 </p>
 
-    - Show Axis Triad: Enable visualization of the global 3D coordinate system at origin (0,0,0)
-    - Show grid: Enables visualization of a virtual grid, aligned with the floor.
-    - Show Point Cloud: Enable visualization of raw point cloud of the recording
-    - Use Device Color: Visualize the Point Cloud with different color for each camera view-point.
-    - Show Frustums: Visualize the locations of each camera viewpoint
-    - Frustum Scale: Control the scale of the frustums
-    - Point Size: Point size used to rendered the 3D Point Cloud of the recording
-    - Show Target: This will show the 3D reconstructed mesh for the point cloud of the current frame. This constitutes the target for the template fitting problem. (i.e fit the animated template to the Target mesh)
-    - Show Animated: This will show the animated template at the specified pose (as defined in the `Pose Parameters` widget)
-    - Show Chamfer: This will enable color visualization of the Chamfer distance (<img src="https://render.githubusercontent.com/render/math?math=E_D">) on the animated template mesh
-    - Split Meshes: Show animated and Target meshes side by side (or otherwise, visualize them in the common global 3D coordinate system)
-    - Show Template: Visualizes the template mesh at its initial pose (i.e. in the pose in which it was reconstructed)
-    - Show Skeleton: Visualizes the skeleton of the animated mesh
-    - Show weights: Visualizes the domminant skinning weights on the animated template in a color-coded manner.Each color is assigned to a different limb.
-    - Blend weights: Visualizes the blended skinning weights on the animated template in a color-coded manner.
-    - Render 2D Silhouettes: Enables visualization of the silhouette error terms
+- Show Axis Triad: Enable visualization of the global 3D coordinate system at origin (0,0,0)
+- Show grid: Enables visualization of a virtual grid, aligned with the floor.
+- Show Point Cloud: Enable visualization of raw point cloud of the recording
+- Use Device Color: Visualize the Point Cloud with different color for each camera view-point.
+- Show Frustums: Visualize the locations of each camera viewpoint
+- Frustum Scale: Control the scale of the frustums
+- Point Size: Point size used to rendered the 3D Point Cloud of the recording
+- Show Target: This will show the 3D reconstructed mesh for the point cloud of the current frame. This constitutes the target for the template fitting problem. (i.e fit the animated template to the Target mesh)
+- Show Animated: This will show the animated template at the specified pose (as defined in the `Pose Parameters` widget)
+- Show Chamfer: This will enable color visualization of the Chamfer distance (<img src="https://render.githubusercontent.com/render/math?math=E_D">) on the animated template mesh
+- Split Meshes: Show animated and Target meshes side by side (or otherwise, visualize them in the common global 3D coordinate system)
+- Show Template: Visualizes the template mesh at its initial pose (i.e. in the pose in which it was reconstructed)
+- Show Skeleton: Visualizes the skeleton of the animated mesh
+- Show weights: Visualizes the domminant skinning weights on the animated template in a color-coded manner.Each color is assigned to a different limb.
+- Blend weights: Visualizes the blended skinning weights on the animated template in a color-coded manner.
+- Render 2D Silhouettes: Enables visualization of the silhouette error terms
 
-    A screenshot of the depicted target and animated meshes is given below:
+A screenshot of the depicted target and animated meshes is given below:
     
 <p align="center">
 <img width=350 src="../assets/images/perfcap/meshes.png"/>
