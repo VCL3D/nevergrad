@@ -38,6 +38,20 @@
   }
 }
 
+.main-wide {
+  @include mq(md) {
+    position: relative;
+    max-width: $wide-width;
+    margin-left: $nav-width-md;
+  }
+
+  @include mq(lg) {
+    margin-left: calc(
+      (100% - #{$nav-width + $wide-width}) / 2 + #{$nav-width}
+    );
+  }
+}
+
 .main-content-wrap {
   @include container;
   padding-top: $gutter-spacing-sm;

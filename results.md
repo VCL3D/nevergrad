@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: wide
 title: Results
 nav_order: 7
 description: "Benchmark Results"
