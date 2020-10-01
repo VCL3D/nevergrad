@@ -5,7 +5,7 @@ nav_order: 5
 description: "The Benchmark Server Application"
 ---
 
-# The Perfcap Application
+# The Performance Capture Application
 
 When `performance_capture.exe` is run without the `--benchmark_server` flag and without any additional command line arguments, it can be used to load a project file in order to inspect data and see some visualizations of selected individual error terms.
 
@@ -17,14 +17,14 @@ When `performance_capture.exe` is run without the `--benchmark_server` flag and 
     <img width=100 src="../assets/images/perfcap/widget_manager.png"/>
     </p>
 
-2. Use the player widget to navigate throughout the recoding.
-    
+2. Use the `Player` widget to navigate throughout the recoding.
+
     <p align="center">
     <img width=250 src="../assets/images/perfcap/player.png"/>
     </p>
 
 3. Use the `Visualizations` widget to enable additional visualizations
-    
+
     <p align="center">
     <img width=150 src="../assets/images/perfcap/visualizations.png"/>
     </p>
@@ -48,11 +48,11 @@ When `performance_capture.exe` is run without the `--benchmark_server` flag and 
     - Render 2D Silhouettes: Enables visualization of the silhouette error terms
 
     A screenshot of the depicted target and animated meshes is given below:
-    
+
     <p align="center">
     <img width=350 src="../assets/images/perfcap/meshes.png"/>
     </p>
-    
+
     Sample visualization of chamfer and silhouette error terms as we move the elbow of the animated template are given next:
 
     <p align="center">
@@ -73,7 +73,7 @@ When `performance_capture.exe` is run without the `--benchmark_server` flag and 
     </p>
 
 4. Use the `Error selector` to select and enable computation of individual error terms. After making your selection, press `Refresh Frame` once. Evaluation of the error terms is executed after each modification of the animate template's pose parameters in the `Pose Parameters` widget.
-    
+
     <p align="center">
     <img width=200 src="../assets/images/perfcap/error_selector.png"/>
     </p>
