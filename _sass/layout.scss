@@ -24,6 +24,28 @@
   }
 }
 
+.side-bar-wide {
+  z-index: 0;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: $sidebar-color;
+
+  @include mq(md) {
+    flex-wrap: nowrap;
+    position: fixed;
+    width: $nav-width-md;
+    height: 100%;
+    flex-direction: column;
+    border-right: $border $border-color;
+    align-items: flex-end;
+  }
+
+  @include mq(lg) {
+    width: calc((100% - #{$nav-width + $wide-width}) / 2 + #{$nav-width});
+    min-width: $nav-width;
+  }
+}
+
 .main {
   @include mq(md) {
     position: relative;
