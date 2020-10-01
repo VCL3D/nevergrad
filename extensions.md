@@ -12,7 +12,8 @@ Each benchmark experiment can be configured via editing the files located in `be
 ```python
 "benchmark_server_args" : {
     "experiment_id": {int} # this is the experiment_id. must be unique across all experiment{X}.json files.
-    "project_file_path": {string} # must be a path to a project file relative to he performance_capture.exe binary
+    "project_file_path": {string} # must be a path to a project file relative to
+    # the performance_capture.exe binary
     "frame_index": {int},  # defines the target frame where the animated template should fit to.
     "error_weights": {  # error
         "silhouette": 0.1,              # error weight for E_J
@@ -53,8 +54,11 @@ Each benchmark experiment can be configured via editing the files located in `be
                                             # len(mutation_variances) = sum(DOFs == true)
         "mutable_mutation_variances":[true,true,true],
         # defines whether mutation variances of DOFs
-        # marked as true (in the same order as they appear in DOFs) are mutable - len(mutable_mutation_variances) = sum(DOFs == true)
-        # min,max bounds for each DOF marked as True (order is same as they appear in DOFs) - len(bounds_min) = sum(DOFs == true)
+        # marked as true (in the same order as they appear in DOFs) are mutable.
+        # len(mutable_mutation_variances) = sum(DOFs == true)
+        # min,max bounds for each DOF marked as True (order is same as they appear in DOFs)
+        # len(bounds_min) = sum(DOFs == true)
+        # len(bounds_max) = sum(DOFs == true)
         "bounds_min" : [-0.4,-0.4,-0.4],
         "bounds_max" : [0.4,0.4,0.4]
 
