@@ -60,7 +60,7 @@ nav_sort: case_sensitive # Capital letters sorted before lowercase
 back_to_top: true
 back_to_top_text: "Back to top"
 
-footer_content: "<a href="https://github.com/VCL3D">Visual Computing Lab</a>"
+# footer_content: "<a href="https://github.com/VCL3D">Visual Computing Lab</a>"
 
 # Footer last edited timestamp
 last_edit_timestamp: true # show or hide edit time - page must have `last_modified_date` defined in the frontmatter
