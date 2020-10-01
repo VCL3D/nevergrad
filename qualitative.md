@@ -8,13 +8,13 @@ description: "Qualitative Benchmark Results"
 # Visualized Error on the Converged Poses
 
 - **Project#2**
-
+<!--
     -  **Budget: 2000**
 
         | CMA   |      DE      |  Powell |
         |:----------:|:-------------:|:-------------:|
         | <img width=190 align="left" src="../assets/images/qualitative\experiment2\2000\Front/CMA.png"/> <img width=190 align="right" src="../assets/images/qualitative\experiment2\2000\Back/CMA.png"/> | <img width=190 align="left" src="../assets/images/qualitative\experiment2\2000\Front/DE.png"/> <img width=190 align="right" src="../assets/images/qualitative\experiment2\2000\Back/DE.png"/> | <img width=190 align="left" src="../assets/images/qualitative\experiment2\2000\Front/Powell.png"/> <img width=190 align="right" src="../assets/images/qualitative\experiment2\2000\Back/Powell.png"/> |
-
+-->
 ![Exp2_1](./assets/images/qualitative/experiment2/experiment2_1.png)
 ![Exp2_2](./assets/images/qualitative/experiment2/experiment2_2.png)
 
