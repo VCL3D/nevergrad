@@ -1,33 +1,9 @@
 ---
 layout: default
-title: Introduction
-nav_order: 1
-description: "Documentation page for the Nevergrad Performance Capture Benchmark"
-permalink: /
+title: Benchmark Server
+nav_order: 5
+description: "The Benchmark Server Application"
 ---
-
-# Performance Capture Benchmark
-
-## Description
-
-This pull request regards the addition of a new benchmark to the nevergrad platform for the real-world noisy problem of 3D Human Performance Capture via fitting an animatable template 3D mesh to post-processed sensed 3D data.
-
-The dataset consists of 3D captures of 11 human performances, recorded via the Multi-View Volumetric Capture System of [1]. For the purposes of this benchmark and for each performance, a 3D animatable template mesh has been created along with the selection of one individual target frame. The benchmark aims to assess the performance of nevergrad optimizers to the task of fitting the animatable template mesh (via its animation parameters) to the sensed 3D data of the selected performance's target frame.
-
-To realize the concept, along with this pull request, we release Windows binaries of a Performance Capture Benchmark Server (Perfcap benchmark server) which is able to serve Objective Function evaluations for arbitrary template mesh animation parameter values for each one of the designed experiments. To the nevergrad side, we implemented a python client to this benchmark server, which acts as an ObjectiveFunction proxy for every benchmarked optimizer.
-
-## Definitions
-
-### Project
-
-A **project** consists of sensed 3D data captured during the performance recording of a single human and a constructed animatable template of the performer.
-
-### Experiment
-
-As an **experiment** we define the problem of fitting the subject's template 3D mesh to a specific target frame of the captured performance. Each experiment instance is tightly bound to a project. Further, an experiment instance is bound to a specific objective function parameterization and to a specific optimizer under a pre-defined budget. Objective function parameterization consists of defining a subset of template's animation variables to optimize against (i.e. locking/excluding some degrees of freedom for some joints) and specifying weights of individual error terms.
-
-
-## Benchmark Server Documentation
 
 When `performance_capture.exe` is run without the `--benchmark_server` flag and without any additional command line arguments, it can be used to load a project file in order to inspect data and see some visualizations of selected individual error terms.
 
@@ -83,31 +59,3 @@ When `performance_capture.exe` is run without the `--benchmark_server` flag and 
 5. Use the `Errors` widget to inspect individual error term values and small graphs, as you play with pose parameters in the `Pose Parameters widget`
 
     ![Errors](./assets/images/perfcap/error_vis.png)
-
-## Logging
-
-### Nevergrad Logging
-Each performance capture benchmark (`perfcap_benchX`) is **implicitly** associated with a unique id, called `experiment_id`, an integer value in [1,11]. This identifier is associated with a group of experiments all sharing in common the same project data and the same target fitting frame. `experiment_id` is defined inside `./benchmark/perfcap/experiment_config/experimentX.json` configuration files and is aligned with the number of the benchmark. (i.e. `perfcap_bench1` has `experiment_id` 1, `perfcap_bench2` has `experiment_id` 2, etc). Additionally, each individual experiment receives an `experiment_tag_id`, uniquely identifying the optimizer and budget under which the experiment was run. `experiment_id_tag` is also appended in the nevergrad CSV logs and is an identifier which can help in associating nevergrad logs with benchmark server logs.
-
-### Benchmark Server Logging
-
-For each finished experiment identified by `experiment_tag_id`, the benchmark server writes 3 kinds of logs:
-
-* `benchmark_server/logs/{experiment_tag_id}.json`: for each iteration of the optimization this file contains the objective function query point (animation poses), the individual error term values and the aggregated (weighed) error value of the objective function at the this point.
-* `benchmark_server/live_meshes/experiment_{experiment_id}.ply`: the 3D mesh that corresponds to the target frame of the performance that the animated template should fit.
-* `benchmark_server/animated_meshes/{experiment_tag_id}.ply}`: these files contain the animated template 3D mesh at the optimizer recommendation pose, after optimization finishes.
-
-
-
-
-`
-[1] Volumetric Capture
-`
-
-`
-[2] Performance Capture
-`
-
-`
-[3] Optimizer Benchmarking
-`
