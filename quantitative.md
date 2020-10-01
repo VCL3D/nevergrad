@@ -7,46 +7,49 @@ description: "Quantitative Benchmark Results"
 
 # Nevergrad Experiments
 
-| Experiment#1   |      Experiment#2      |
-|:----------:|:-------------:|
-| ![exp1](./assets/images/nevergrad/plots/perfcap_experiment1_plots/xpresults.png) | ![exp2](./assets/images/nevergrad/plots/perfcap_experiment2_plots/xpresults.png) | 
+- Project#1
+    ![exp1](./assets/images/nevergrad/plots/perfcap_experiment1_plots/xpresults.png)
+    ![exp1](./assets/images/nevergrad/plots/perfcap_experiment1_plots/fight_all.png)
 
-| Experiment#3 | Experiment#4 | 
-|:----------:|:-------------:|
-| ![exp3](./assets/images/nevergrad/plots/perfcap_experiment3_plots/xpresults.png) | ![exp4](./assets/images/nevergrad/plots/perfcap_experiment4_plots/xpresults.png) |
+- Project#2
+    ![exp2](./assets/images/nevergrad/plots/perfcap_experiment2_plots/xpresults.png)
+    ![exp2](./assets/images/nevergrad/plots/perfcap_experiment2_plots/fight_all.png)
 
-| Experiment#5 | Experiment#6 |
-|:----------:|:-------------:|
-| ![exp5](./assets/images/nevergrad/plots/perfcap_experiment5_plots/xpresults.png) | ![exp6](./assets/images/nevergrad/plots/perfcap_experiment6_plots/xpresults.png) |
+- Project#3
+    ![exp3](./assets/images/nevergrad/plots/perfcap_experiment3_plots/xpresults.png)
+    ![exp3](./assets/images/nevergrad/plots/perfcap_experiment3_plots/fight_all.png)
 
-| Experiment#7 | Experiment#8 |
-|:----------:|:-------------:|
-| ![exp7](./assets/images/nevergrad/plots/perfcap_experiment7_plots/xpresults.png) | ![exp8](./assets/images/nevergrad/plots/perfcap_experiment8_plots/xpresults.png) | 
+- Project#4
+    ![exp4](./assets/images/nevergrad/plots/perfcap_experiment4_plots/xpresults.png)
+    ![exp4](./assets/images/nevergrad/plots/perfcap_experiment4_plots/fight_all.png)
 
-|Experiment#9 | Experiment#10 |
-|:----------:|:-------------:|
-![exp9](./assets/images/nevergrad/plots/perfcap_experiment9_plots/xpresults.png) | ![exp10](./assets/images/nevergrad/plots/perfcap_experiment10_plots/xpresults.png) |
+- Project#5
+    ![exp5](./assets/images/nevergrad/plots/perfcap_experiment5_plots/xpresults.png)
+    ![exp5](./assets/images/nevergrad/plots/perfcap_experiment5_plots/fight_all.png)
 
-| Experiment#11 |
-|:----------:|
-|  ![exp11](./assets/images/nevergrad/plots/perfcap_experiment11_plots/xpresults.png) |
+- Project#6
+    ![exp6](./assets/images/nevergrad/plots/perfcap_experiment6_plots/xpresults.png)
+    ![exp6](./assets/images/nevergrad/plots/perfcap_experiment6_plots/fight_all.png)
 
+- Project#7
+    ![exp7](./assets/images/nevergrad/plots/perfcap_experiment7_plots/xpresults.png)
+    ![exp7](./assets/images/nevergrad/plots/perfcap_experiment7_plots/fight_all.png)
 
-| Experiment#1   |      Experiment#2      |  Experiment#3 |
-|:----------:|:-------------:|:-------------:|
-| ![exp1](./assets/images/nevergrad/plots/perfcap_experiment1_plots/fight_all.png) | ![exp2](./assets/images/nevergrad/plots/perfcap_experiment2_plots/fight_all.png) | ![exp3](./assets/images/nevergrad/plots/perfcap_experiment3_plots/fight_all.png) |
+- Project#8 
+    ![exp8](./assets/images/nevergrad/plots/perfcap_experiment8_plots/xpresults.png)
+    ![exp8](./assets/images/nevergrad/plots/perfcap_experiment8_plots/fight_all.png)
 
-| Experiment#4 | Experiment#5 | Experiment#6 |
-|:----------:|:-------------:|:-------------:|
-| ![exp4](./assets/images/nevergrad/plots/perfcap_experiment4_plots/fight_all.png) | ![exp5](./assets/images/nevergrad/plots/perfcap_experiment5_plots/fight_all.png) | ![exp6](./assets/images/nevergrad/plots/perfcap_experiment6_plots/fight_all.png) |
+- Project#9 
+    ![exp9](./assets/images/nevergrad/plots/perfcap_experiment9_plots/xpresults.png)
+    ![exp9](./assets/images/nevergrad/plots/perfcap_experiment9_plots/fight_all.png)
 
-| Experiment#7 | Experiment#8 |Experiment#9 |
-|:----------:|:-------------:|:-------------:|
-| ![exp7](./assets/images/nevergrad/plots/perfcap_experiment7_plots/fight_all.png) | ![exp8](./assets/images/nevergrad/plots/perfcap_experiment8_plots/fight_all.png) | ![exp9](./assets/images/nevergrad/plots/perfcap_experiment9_plots/fight_all.png) |
+- Project#10
+    ![exp10](./assets/images/nevergrad/plots/perfcap_experiment10_plots/xpresults.png)
+    ![exp10](./assets/images/nevergrad/plots/perfcap_experiment10_plots/fight_all.png)
 
-| Experiment#10 | Experiment#11 | |
-|:----------:|:-------------:|:-------------:|
-| ![exp10](./assets/images/nevergrad/plots/perfcap_experiment10_plots/fight_all.png) | ![exp11](./assets/images/nevergrad/plots/perfcap_experiment11_plots/fight_all.png) | |
+- Project#11
+    ![exp11](./assets/images/nevergrad/plots/perfcap_experiment11_plots/xpresults.png)
+    ![exp11](./assets/images/nevergrad/plots/perfcap_experiment11_plots/fight_all.png)
 
 
 # Optimizer Evaluation
