@@ -189,11 +189,11 @@ This messages flushes benchmark server logs for the experiment specified by `exp
 
 ```json
 {
-	"reply_info": {
-		"transaction_id":"0cd2ffd-363f-4b8b-f46d-ddf2d2f45fdd"
-	},
-	"args": {
-			"silhouette": 0.7312,
+    "reply_info": {
+        "transaction_id":"0cd2ffd-363f-4b8b-f46d-ddf2d2f45fdd"
+    },
+    "args": {
+            "silhouette": 0.7312,
             "chamfer_total": 0.031847,
             "chamfer_interpenetration": 0.01321,
             "surface_gradient_error": 0.01,
@@ -201,8 +201,8 @@ This messages flushes benchmark server logs for the experiment specified by `exp
             "anthropomorfic_constraints": 0.0,
             "point2plane" : 0.3781,
             "total": 0.15977
-		}
-	}
+        }
+    }
 }
 ```
 
