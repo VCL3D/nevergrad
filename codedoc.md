@@ -46,6 +46,7 @@ Their request-response API message definitions are given below.
     }
 }
 ```
+
 - `experiment_id`: must be the integer designated in the `experiment{X}.json` included in the folder `nevergrad/benchmark/perfcap/experiment_configuration`. This is to facilitate logging. The target mesh of the benchmark instance is always saved in `benchmark_server/live_meshes/experiment_{experiment_id}.ply`.
 - `frame_index`: sets the target mesh's frame number inside the performance recording.
 - `project_file_path`: defines which project file to load. must be a relative path with respect to the `performance_capture.exe`.
@@ -66,11 +67,10 @@ The `set_experiment` message is effective only the first time it is received by 
     }
 }
 ```
-`status`: can be either 0 (Success) or 1 (Failure)
-`message`: A string representation of the status returned by the benchmark serer
+- `status`: can be either 0 (Success) or 1 (Failure)
+- `message`: A string representation of the status returned by the benchmark serer
 
 ### Start Experiment
-
 
 #### Request
 ```json
@@ -86,12 +86,11 @@ The `set_experiment` message is effective only the first time it is received by 
 }
 ```
 
-`experiment_tag_id`: a unique identifier generated client-side that uniquely identifies the performance capture experiment. An experiment_tag_id is unique across project, optimizer and budget. It is used to facilitate logging. All objective function evaluation requests (i.e. optimizer's exploration history) and the final converged animated pose of the template is saved under the `experiment_tag_id`. See `./benchmark_server/logs/{experiment_tag_id}.json` and `./benchmark_server./animated_meshes/{experiment_tag_id.ply}`.
+- `experiment_tag_id`: a unique identifier generated client-side that uniquely identifies the performance capture experiment. An experiment_tag_id is unique across project, optimizer and budget. It is used to facilitate logging. All objective function evaluation requests (i.e. optimizer's exploration history) and the final converged animated pose of the template is saved under the `experiment_tag_id`. See `./benchmark_server/logs/{experiment_tag_id}.json` and `./benchmark_server./animated_meshes/{experiment_tag_id.ply}`.
 
 In the benchmark client code-base this is also reffered as "experiment registration".
 
 #### Response
-
 
 ```json
 {
@@ -104,8 +103,8 @@ In the benchmark client code-base this is also reffered as "experiment registrat
     }
 }
 ```
-`status`: can be either 0 (Success) or 1 (Failure)
-`message`: A string representation of the status returned by the benchmark serer
+- `status`: can be either 0 (Success) or 1 (Failure)
+- `message`: A string representation of the status returned by the benchmark serer
 
 ### Stop Experiment
 
@@ -130,8 +129,8 @@ In the benchmark client code-base this is also reffered as "experiment registrat
 }
 ```
 
-`experiment_tag_id`: the `experiment_tag_id` of the experiment that has finished.
-`pose`: an array of [`joint_id`,`values`] pairs identifying the converged pose, i.e the optimizer's recommendation. The benchmark server will save the animated template in this pose in its logs.
+- `experiment_tag_id`: the `experiment_tag_id` of the experiment that has finished.
+- `pose`: an array of [`joint_id`,`values`] pairs identifying the converged pose, i.e the optimizer's recommendation. The benchmark server will save the animated template in this pose in its logs.
 
 This messages flushes benchmark server logs for the experiment specified by `experiment_tag_id`. In benchmark clinet code-base this is also refered as "experiment unregisteration".
 
@@ -149,8 +148,8 @@ This messages flushes benchmark server logs for the experiment specified by `exp
 }
 ```
 
-`status`: can be either 0 (Success) or 1 (Failure)
-`message`: A string representation of the status returned by the benchmark serer
+- `status`: can be either 0 (Success) or 1 (Failure)
+- `message`: A string representation of the status returned by the benchmark serer
 
 ### Function Evaluation
 
@@ -181,9 +180,9 @@ This messages flushes benchmark server logs for the experiment specified by `exp
 }
 ```
 
-`experiment_id`: The `experiment_id` of the current benchmark as defined in the `experiment{X}.json` included in the folder `nevergrad/benchmark/perfcap/experiment_configuration`. This is ignored for now, but included for future reference.
-`experiment_tag_id`: The `experiment_tag_id` corresponding to this objective function evaluation. The server uses this info to append the requested objective function evaluation query point to its logs.
-`pose`: an array of [`joint_id`,`values`] pairs identifying the pose (objective function evaluation query point) that the optimizer asked for.
+- `experiment_id`: The `experiment_id` of the current benchmark as defined in the `experiment{X}.json` included in the folder `nevergrad/benchmark/perfcap/experiment_configuration`. This is ignored for now, but included for future reference.
+- `experiment_tag_id`: The `experiment_tag_id` corresponding to this objective function evaluation. The server uses this info to append the requested objective function evaluation query point to its logs.
+- `pose`: an array of [`joint_id`,`values`] pairs identifying the pose (objective function evaluation query point) that the optimizer asked for.
 
 
 #### Response
