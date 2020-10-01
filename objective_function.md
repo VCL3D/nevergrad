@@ -68,17 +68,26 @@ or a data fitting perspective:
 | Surface alignment (<img src="https://render.githubusercontent.com/render/math?math=E_S">) <!-- $E_S$ --> |    Anthropometric prior (<img src="https://render.githubusercontent.com/render/math?math=E_A">) <!-- $E_A$ -->   |
 | Silhouette error (<img src="https://render.githubusercontent.com/render/math?math=E_J">) <!-- $E_J$ --> |  |
 
-Our complete objective as formulated above is a linear weighted combination of these terms as weighted by the respective weights <img src="https://render.githubusercontent.com/render/math?math=\lambda"> <!-- $\lambda$ -->. More details can be found in (__\[[10](#Perfcap)\]__).
+Our complete objective as formulated above is a linear weighted combination of these terms as weighted by the respective weights <img src="https://render.githubusercontent.com/render/math?math=\lambda"> <!-- $\lambda$ -->. More details can be found in __\[[10](#Perfcap)\]__.
 
-Each pose parameter vector <img src="https://render.githubusercontent.com/render/math?math=\mathbf{p}:=\{\mathbf{R},\mathbf{t},\boldsymbol{\theta}\}">, corresponds to a global root rotation <img src="https://render.githubusercontent.com/render/math?math=\mathbf{R}\in\mathbb{R}^3"> and translation <img src="https://render.githubusercontent.com/render/math?math=\mathbf{t}\in\mathbb{R}^3">, as well as per joint <img src="https://render.githubusercontent.com/render/math?math=j\in[1, J]"> rotation parameters <img src="https://render.githubusercontent.com/render/math?math=\boldsymbol{\theta}\in\mathbb{R}^{h\times3}"> for all joints <img src="https://render.githubusercontent.com/render/math?math=J">,parameterized by their exponential map (__\[[1](#ExpMap)\]__).
-All template meshes are automatically skinned and rigged with (__\[[2](#Pinocchio)\]__).
+Each pose parameter vector <img src="https://render.githubusercontent.com/render/math?math=\mathbf{p}:=\{\mathbf{R},\mathbf{t},\boldsymbol{\theta}\}">, corresponds to a global root rotation <img src="https://render.githubusercontent.com/render/math?math=\mathbf{R}\in\mathbb{R}^3"> and translation <img src="https://render.githubusercontent.com/render/math?math=\mathbf{t}\in\mathbb{R}^3">, as well as per joint <img src="https://render.githubusercontent.com/render/math?math=j\in[1, J]"> rotation parameters <img src="https://render.githubusercontent.com/render/math?math=\boldsymbol{\theta}\in\mathbb{R}^{h\times3}"> for all joints <img src="https://render.githubusercontent.com/render/math?math=J">,parameterized by their exponential map __\[[1](#ExpMap)\]__.
+All template meshes are automatically skinned and rigged with __\[[2](#Pinocchio)\]__.
 By animating the rigged and skinned template with the pose parameters <img src="https://render.githubusercontent.com/render/math?math=\mathbf{p}"> we get a re-posed mesh of the template <img src="https://render.githubusercontent.com/render/math?math=\mathbf{\hat{V}}=DQS(\mathbf{V},\mathbf{p})">.
-For animation we use dual quaternion skinning (DQS) (__\[[3](#DQS)\]__).
+For animation we use dual quaternion skinning (DQS) __\[[3](#DQS)\]__.
 
 <p align="center">
 <img width=500 src="../assets/images/animation.png"/>
 </p>
 
+Four error functions are formulated indirectly to the optimized variables through the animated mesh, while the anthropometric prior <img src="https://render.githubusercontent.com/render/math?math=E_A"> is calculated solely on the pose parameters <img src="https://render.githubusercontent.com/render/math?math=\mathbf{p}">.
+
+Regarding the former, we first calculate the Euclidean Distance Transform (EDT) using a separable Chamfer implementation __\[[4](#Chamfer)\]__ defined on a voxel grid <img src="https://render.githubusercontent.com/render/math?math=\mathbf{G}"> whose bounding box is tightly calculated using the input live data.
+Thus our <img src="https://render.githubusercontent.com/render/math?math=3D"> error terms are defined:
+
+1. <img src="https://render.githubusercontent.com/render/math?math=E_D=\frac{1}{V}\sum_{\mathbf{v}\in\mathbf{\hat{V}}}\mathcal{S}_\mathbf{P}(\mathbf{G},\lfloor\mathbf{v}\rfloor)%2B||\mathbf{v}-\lfloor\mathbf{v}\rfloor||_2">,
+    
+    where a sampling operation <img src="https://render.githubusercontent.com/render/math?math=\mathcal{S}"> defined on the EDT grid, samples the distance at each animated vertex <img src="https://render.githubusercontent.com/render/math?math=\mathbf{v}">, clamped within the confines of the bounding box that the EDT was calculated in through <img src="https://render.githubusercontent.com/render/math?math=\lfloor . \rfloor">.
+    Given that pose parameters may be explored outside the bounding box that the EDT is defined in, we further supplement the sampled distance, with an approximate distance that is negligible within the bounding box, but allows the error to extrapolate outside its bounds and offer meaningful evaluations.
 
 ![Errors](./assets/images/errors.png)
 
@@ -90,6 +99,7 @@ For animation we use dual quaternion skinning (DQS) (__\[[3](#DQS)\]__).
 
 <a name="DQS"/>__[3]__ Kavan, L., Collins, S., Žára, J., & O'Sullivan, C. (2007, April). Skinning with dual quaternions. In Proceedings of the 2007 symposium on Interactive 3D graphics and games (pp. 39-46).
 
+<a name="Chamfer"/>__[4]__ Coeurjolly, D., & Montanvert, A. (2007). Optimal separable algorithms to compute the reverse euclidean distance transformation and discrete medial axis in arbitrary dimension. IEEE transactions on pattern analysis and machine intelligence, 29(3), 437-448.
 
 
 <a name="Perfcap"/>__[10]__ To appear.
