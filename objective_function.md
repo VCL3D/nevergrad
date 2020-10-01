@@ -104,7 +104,7 @@ Finally, we also employ a projective <img src="https://render.githubusercontent.
 - <p align="left"><img width=250 src="https://render.githubusercontent.com/render/math?math=E_J(\mathbf{p})=\frac{1}{K}\sum_k^K1-\frac{\mathbf{M}^P_k\cap\mathbf{M}^A_k}{\mathbf{M}^P_k\cup\mathbf{M}^A_k}"></p>
 
     which represents a **Jaccard** metric of (dis-)similarity, otherwise known as intersection-over-union (_IoU_).
-    This is defined after rendering the silhouette images of the live <img src="https://render.githubusercontent.com/render/math?math=\mathbf{M}^P_k"> and animated meshes <img src="https://render.githubusercontent.com/render/math?math=\mathbf{M}^A_k"> at each <img src="https://render.githubusercontent.com/render/math?math=k\inK"> input viewpoints.
+    This is defined after rendering the silhouette images of the live <img src="https://render.githubusercontent.com/render/math?math=\mathbf{M}^P_k"> and animated meshes <img src="https://render.githubusercontent.com/render/math?math=\mathbf{M}^A_k"> at each <img src="https://render.githubusercontent.com/render/math?math=k\in%20K"> input viewpoints.
 
 ![Errors](./assets/images/errors.png)
 
