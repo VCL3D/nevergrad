@@ -10,10 +10,10 @@ description: "Qualitative Benchmark Results"
 - **Project#2**
 
     -  **Budget: 2000**
-    
+
         | CMA   |      DE      |  Powell |
         |:----------:|:-------------:|:-------------:|
-        | <img align="left" src="./assets/images/qualitative\experiment2\2000\Back/CMA.png"/> <img align="right" src="./assets/images/qualitative\experiment2\2000\Front/CMA.png"/> | <img align="left" src="./assets/images/qualitative\experiment2\2000\Back/DE.png"/> <img align="right" src="./assets/images/qualitative\experiment2\2000\Front/DE.png"/> | <img align="left" src="./assets/images/qualitative\experiment2\2000\Back/Powell.png"/> <img align="right" src="./assets/images/qualitative\experiment2\2000\Front/Powell.png"/> |
+        | <img align="left" src="../assets/images/qualitative\experiment2\2000\Back/CMA.png"/> <img align="right" src="../assets/images/qualitative\experiment2\2000\Front/CMA.png"/> | <img align="left" src="../assets/images/qualitative\experiment2\2000\Back/DE.png"/> <img align="right" src="../assets/images/qualitative\experiment2\2000\Front/DE.png"/> | <img align="left" src="../assets/images/qualitative\experiment2\2000\Back/Powell.png"/> <img align="right" src="../assets/images/qualitative\experiment2\2000\Front/Powell.png"/> |
 
 ![Exp2_1](./assets/images/qualitative/experiment2/experiment2_1.png)
 ![Exp2_2](./assets/images/qualitative/experiment2/experiment2_2.png)
