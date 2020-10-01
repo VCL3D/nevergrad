@@ -91,7 +91,7 @@ Thus our <img src="https://render.githubusercontent.com/render/math?math=3D"> er
 
 - <p align="left"><img width=350 src="https://render.githubusercontent.com/render/math?math=E_S=\frac{1}{V}\sum_{(\mathbf{v},\mathbf{n})\in(\mathbf{\hat{V}},\mathbf{\hat{N}})}1-\langle\nabla\mathcal{S}_{\mathbf{P}}(\mathbf{G},\mathbf{\lfloor\!v\rfloor}),\mathbf{n}\rangle^2"></p>
 
-    which represents a **surface alignment** error using the gradient of the distance field and the animated template's surface normals.
+    which represents a **surface alignment** error using the gradient of the distance field and the animated template's surface normals (an adaptation of __\[[4](#Alignment)\]__).
     Both <img src="https://render.githubusercontent.com/render/math?math=E_D"> and <img src="https://render.githubusercontent.com/render/math?math=E_S"> provide a combined animated-to-live distance.
 
 - <p align="left"><img width=350 src="https://render.githubusercontent.com/render/math?math=E_P=\sum_{\mathbf{v_q}\in\mathbf{\hat{V}^{q}}}\sum_{j \in \mathbf{J}}\prod_{a}\epsilon_a(\mathbf{v}_q,\mathbf{T}_j),"></p>
@@ -103,13 +103,13 @@ Finally, we also employ a projective <img src="https://render.githubusercontent.
 
 - <p align="left"><img width=250 src="https://render.githubusercontent.com/render/math?math=E_J(\mathbf{p})=\frac{1}{K}\sum_k^K1-\frac{\mathbf{M}^P_k\cap\mathbf{M}^A_k}{\mathbf{M}^P_k\cup\mathbf{M}^A_k}"></p>
 
-    which represents a **Jaccard** metric of (dis-)similarity, otherwise known as intersection-over-union (_IoU_).
+    which represents a **Jaccard** metric of (dis-)similarity, otherwise known as intersection-over-union (_IoU_) __\[[5](#Jaccard)\]__.
     This is defined after rendering the silhouette images of the live <img src="https://render.githubusercontent.com/render/math?math=\mathbf{M}^P_k"> and animated meshes <img src="https://render.githubusercontent.com/render/math?math=\mathbf{M}^A_k"> at each <img src="https://render.githubusercontent.com/render/math?math=k\in%20K"> input viewpoints.
+    This error offers an approximate notion of the live-to-animated distance.
+
+The overall error calculation process for each input pose parameters is depicted below:
 
 ![Errors](./assets/images/errors.png)
-
-
-
 
 <a name="ExpMap"/>__[1]__ Grassia, F. S. (1998). Practical parameterization of rotations using the exponential map. Journal of graphics tools, 3(3), 29-48.
 
@@ -119,5 +119,8 @@ Finally, we also employ a projective <img src="https://render.githubusercontent.
 
 <a name="Chamfer"/>__[4]__ Coeurjolly, D., & Montanvert, A. (2007). Optimal separable algorithms to compute the reverse euclidean distance transformation and discrete medial axis in arbitrary dimension. IEEE transactions on pattern analysis and machine intelligence, 29(3), 437-448.
 
+<a name="Alignment"/>__[4]__ Smirnov, D., Fisher, M., Kim, V. G., Zhang, R., & Solomon, J. (2020). Deep parametric shape predictions using distance fields. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (pp. 561-570).
+
+<a name="Jaccard"/>__[5]__ Jaccard, P. (1901). Distribution de la flore alpine dans le bassin des Dranses et dans quelques régions voisines. Bull Soc Vaudoise Sci Nat, 37, 241-272.
 
 <a name="Perfcap"/>__[10]__ To appear.
