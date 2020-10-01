@@ -43,7 +43,7 @@ heading_anchors: true
 
 # Aux links for the upper right navigation
 aux_links:
-  "Performance Capture Benchmarking with Neverrgad":
+  "Performance Capture Benchmarking with Nevergad":
     - "//github.com/alexd314/nevergrad/tree/perfcap_benchmark"
 
 # Makes Aux links open in a new tab. Default is false
@@ -79,7 +79,7 @@ color_scheme: nil
 
 # Google Analytics Tracking (optional)
 # e.g, UA-1234567-89
-#ga_tracking: 
+#ga_tracking:
 #ga_tracking_anonymize_ip: true # Use GDPR compliant Google Analytics settings (true/nil by default)
 
 highlighter: rouge
