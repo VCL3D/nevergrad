@@ -8,20 +8,21 @@ description: "Quantitative Benchmark Results"
 # Nevergrad Experiments
 
 - Project#1
+
     | Plot | Comparison |
-    |:----:|:-----:|
-    | ![exp1](./assets/images/nevergrad/plots/perfcap_experiment1_plots/xpresults.png) | ![exp1](./assets/images/nevergrad/plots/perfcap_experiment1_plots/fight_all.png) |
+    |:-------:|:-------:|
+    | ![plot_project1](./assets/images/nevergrad/plots/perfcap_experiment1_plots/xpresults.png) | ![exp1](./assets/images/nevergrad/plots/perfcap_experiment1_plots/fight_all.png) |
 
 - Project#2
-    ![exp2](./assets/images/nevergrad/plots/perfcap_experiment2_plots/xpresults.png)
+    ![plot_project2](./assets/images/nevergrad/plots/perfcap_experiment2_plots/xpresults.png)
     ![exp2](./assets/images/nevergrad/plots/perfcap_experiment2_plots/fight_all.png)
 
 - Project#3
-    ![exp3](./assets/images/nevergrad/plots/perfcap_experiment3_plots/xpresults.png)
+    ![plot_project3](./assets/images/nevergrad/plots/perfcap_experiment3_plots/xpresults.png)
     ![exp3](./assets/images/nevergrad/plots/perfcap_experiment3_plots/fight_all.png)
 
 - Project#4
-    ![exp4](./assets/images/nevergrad/plots/perfcap_experiment4_plots/xpresults.png)
+    ![plot_project4](./assets/images/nevergrad/plots/perfcap_experiment4_plots/xpresults.png)
     ![exp4](./assets/images/nevergrad/plots/perfcap_experiment4_plots/fight_all.png)
 
 - Project#5
