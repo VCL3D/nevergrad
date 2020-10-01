@@ -68,6 +68,7 @@ Each benchmark experiment can be configured via editing the files located in `be
 }
 ```
 
+
 # Multi-Objective Optimization
 
 For each objective function evaluation, the Performance Capture Benchmark Server will return per term error values of the objective function as well as their weighted sum. In the current implementation the `PerfcapFunction` class which implements the Performance Capture Objective Function, will only return to the caller the `total` weighted sum of the individual error terms. A future extension is possible to extend the `PerfcapFunction` class to support multi-objective optimization under each individual error term. In particular, the response from the Benchmark Server for the function evaluations has the following json format:
