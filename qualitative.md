@@ -6,6 +6,7 @@ description: "Qualitative Benchmark Results"
 ---
 
 # Visualized Error on the Converged Poses
+Fitting results upon convergence of each optimizer with a dense error metric denoted using the heatmap overlayed at each animated mesh vertex.
 
 - **Project#2**
 
@@ -16,6 +17,7 @@ More Projects Coming Soon
 {: .label .label-purple }
 
 # Optimizer Exploration Evolution
+Optimizer evolution visual comparison between the different optimizers with the Chamfer distance visualized through a turbo colormap.
 
 - **Project#2**
 
