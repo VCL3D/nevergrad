@@ -84,7 +84,7 @@ Four error functions are formulated indirectly to the optimized variables throug
 Regarding the former, we first calculate the Euclidean Distance Transform (EDT) using a separable Chamfer implementation __\[[4](#Chamfer)\]__ defined on a voxel grid <img src="https://render.githubusercontent.com/render/math?math=\mathbf{G}"> whose bounding box is tightly calculated using the input live data.
 Thus our <img src="https://render.githubusercontent.com/render/math?math=3D"> error terms are defined:
 
-1. <img src="https://render.githubusercontent.com/render/math?math=E_D=\frac{1}{V}\sum_{\mathbf{v}\in\mathbf{\hat{V}}}\mathcal{S}_\mathbf{P}(\mathbf{G},\lfloor\mathbf{v}\rfloor)%2B||\mathbf{v}-\lfloor\mathbf{v}\rfloor||_2">,
+1. <p align="center"><img width=350 src="https://render.githubusercontent.com/render/math?math=E_D=\frac{1}{V}\sum_{\mathbf{v}\in\mathbf{\hat{V}}}\mathcal{S}_\mathbf{P}(\mathbf{G},\lfloor\mathbf{v}\rfloor)%2B||\mathbf{v}-\lfloor\mathbf{v}\rfloor||_2"></p>,
     
     where a sampling operation <img src="https://render.githubusercontent.com/render/math?math=\mathcal{S}"> defined on the EDT grid, samples the distance at each animated vertex <img src="https://render.githubusercontent.com/render/math?math=\mathbf{v}">, clamped within the confines of the bounding box that the EDT was calculated in through <img src="https://render.githubusercontent.com/render/math?math=\lfloor . \rfloor">.
     Given that pose parameters may be explored outside the bounding box that the EDT is defined in, we further supplement the sampled distance, with an approximate distance that is negligible within the bounding box, but allows the error to extrapolate outside its bounds and offer meaningful evaluations.
