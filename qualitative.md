@@ -9,8 +9,8 @@ description: "Qualitative Benchmark Results"
 
 ## Experiment#2
 
-![Exp2_1](./assets/images/qualitative/experiment2_1.png)
-![Exp2_2](./assets/images/qualitative/experiment2_2.png)
+![Exp2_1](./assets/images/qualitative/experiment2/experiment2_1.png)
+![Exp2_2](./assets/images/qualitative/experiment2/experiment2_2.png)
 
 # Optimizer Exploration Evolution
 

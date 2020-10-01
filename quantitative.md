@@ -8,8 +8,9 @@ description: "Quantitative Benchmark Results"
 # Nevergrad Experiments
 
 - Project#1
-    ![exp1](./assets/images/nevergrad/plots/perfcap_experiment1_plots/xpresults.png)
-    ![exp1](./assets/images/nevergrad/plots/perfcap_experiment1_plots/fight_all.png)
+    | Plot | Comparison |
+    |:----:|:-----:|
+    | ![exp1](./assets/images/nevergrad/plots/perfcap_experiment1_plots/xpresults.png) | ![exp1](./assets/images/nevergrad/plots/perfcap_experiment1_plots/fight_all.png) |
 
 - Project#2
     ![exp2](./assets/images/nevergrad/plots/perfcap_experiment2_plots/xpresults.png)
