@@ -23,7 +23,7 @@ Requirements for Performance Capture Benchmark Server:
 The benchmark server and the nevergrad benchmark python client may be running at different workstations without problem. Messaging between Nevergrad Benchmark and the Performance Capture Benchmark Server is realized through a RabbitMQ server which must be reachable from the machine hosting the nevergrad benchmark as well as the machine hosting the Performance Capure Benchmark Server.
 
 <p align="center">
-<img width=300 src="./assets/images/overview.gif"/>
+<img width=300 src="../assets/images/overview.gif"/>
 </p>
 
 # Installation
