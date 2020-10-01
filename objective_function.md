@@ -68,7 +68,7 @@ or a data fitting perspective:
 | Surface alignment (<img src="https://render.githubusercontent.com/render/math?math=E_S">) <!-- $E_S$ --> |    Anthropometric prior (<img src="https://render.githubusercontent.com/render/math?math=E_A">) <!-- $E_A$ -->   |
 | Silhouette error (<img src="https://render.githubusercontent.com/render/math?math=E_J">) <!-- $E_J$ --> |  |
 
-Our complete objective as formulated above is a linear weighted combination of these terms as weighted by the respective weights <img src="https://render.githubusercontent.com/render/math?math=\lambda"> <!-- $\lambda$ -->. More details can be found in __\[[10](#Perfcap)\]__.
+Our complete objective as formulated above is a linear weighted combination of these terms as weighted by the respective weights <img src="https://render.githubusercontent.com/render/math?math=\lambda"> <!-- $\lambda$ -->. More details can be found in __\[[6](#Perfcap)\]__.
 
 Each pose parameter vector <img src="https://render.githubusercontent.com/render/math?math=\mathbf{p}:=\{\mathbf{R},\mathbf{t},\boldsymbol{\theta}\}">, corresponds to a global root rotation <img src="https://render.githubusercontent.com/render/math?math=\mathbf{R}\in\mathbb{R}^3"> and translation <img src="https://render.githubusercontent.com/render/math?math=\mathbf{t}\in\mathbb{R}^3">, as well as per joint <img src="https://render.githubusercontent.com/render/math?math=j\in[1, J]"> rotation parameters <img src="https://render.githubusercontent.com/render/math?math=\boldsymbol{\theta}\in\mathbb{R}^{h\times3}"> for all joints <img src="https://render.githubusercontent.com/render/math?math=J">,parameterized by their exponential map __\[[1](#ExpMap)\]__.
 All template meshes are automatically skinned and rigged with __\[[2](#Pinocchio)\]__.
@@ -123,4 +123,4 @@ The overall error calculation process for each input pose parameters is depicted
 
 <a name="Jaccard"/>__[5]__ Jaccard, P. (1901). Distribution de la flore alpine dans le bassin des Dranses et dans quelques régions voisines. Bull Soc Vaudoise Sci Nat, 37, 241-272.
 
-<a name="Perfcap"/>__[10]__ To appear.
+<a name="Perfcap"/>__[6]__ To appear.
