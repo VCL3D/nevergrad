@@ -68,18 +68,28 @@ or a data fitting perspective:
 | Surface alignment (<img src="https://render.githubusercontent.com/render/math?math=E_S">) <!-- $E_S$ --> |    Anthropometric prior (<img src="https://render.githubusercontent.com/render/math?math=E_A">) <!-- $E_A$ -->   |
 | Silhouette error (<img src="https://render.githubusercontent.com/render/math?math=E_J">) <!-- $E_J$ --> |  |
 
-Our complete objective as formulated above is a linear weighted combination of these terms as weighted by the respective weights <img src="https://render.githubusercontent.com/render/math?math=\lambda"> <!-- $\lambda$ -->. More details can be found in [3].
+Our complete objective as formulated above is a linear weighted combination of these terms as weighted by the respective weights <img src="https://render.githubusercontent.com/render/math?math=\lambda"> <!-- $\lambda$ -->. More details can be found in (__\[[10](#Perfcap)\]__).
 
 Each pose parameter vector <img src="https://render.githubusercontent.com/render/math?math=\mathbf{p}:=\{\mathbf{R},\mathbf{t},\boldsymbol{\theta}\}">, corresponds to a global root rotation <img src="https://render.githubusercontent.com/render/math?math=\mathbf{R}\in\mathbb{R}^3"> and translation <img src="https://render.githubusercontent.com/render/math?math=\mathbf{t}\in\mathbb{R}^3">, as well as per joint <img src="https://render.githubusercontent.com/render/math?math=j\in[1, J]"> rotation parameters <img src="https://render.githubusercontent.com/render/math?math=\boldsymbol{\theta}\in\mathbb{R}^{h\times3}"> for all joints <img src="https://render.githubusercontent.com/render/math?math=J">,parameterized by their exponential map (__\[[1](#ExpMap)\]__).
+All template meshes are automatically skinned and rigged with (__\[[2](#Pinocchio)\]__).
+By animating the rigged and skinned template with the pose parameters <img src="https://render.githubusercontent.com/render/math?math=\mathbf{p}"> we get a re-posed mesh of the template <img src="https://render.githubusercontent.com/render/math?math=\mathbf{\hat{V}}=DQS(\mathbf{V},\mathbf{p})">.
+For animation we use dual quaternion skinning (DQS) (__\[[3](#DQS)\]__).
 
-
-<!--![Animation](./assets/images/animationc.png)-->
 <p align="center">
 <img width=500 src="../assets/images/animation.png"/>
 </p>
+
 
 ![Errors](./assets/images/errors.png)
 
 
 
 <a name="ExpMap"/>__[1]__ Grassia, F. S. (1998). Practical parameterization of rotations using the exponential map. Journal of graphics tools, 3(3), 29-48.
+
+<a name="Pinocchio"/>__[2]__ Baran, I., & Popović, J. (2007). Automatic rigging and animation of 3d characters. ACM Transactions on graphics (TOG), 26(3), 72-es.
+
+<a name="DQS"/>__[3]__ Kavan, L., Collins, S., Žára, J., & O'Sullivan, C. (2007, April). Skinning with dual quaternions. In Proceedings of the 2007 symposium on Interactive 3D graphics and games (pp. 39-46).
+
+
+
+<a name="Perfcap"/>__[10]__ To appear.
