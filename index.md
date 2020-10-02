@@ -42,4 +42,4 @@ Objective function parameterization consists of defining a subset of template's 
 - The results of our analysis can be found at the [Quantitative](quantitative.md) and [Qualitative](qualitative.md) results sections.
 
 
-<a name="VolCap"/>__[1]__ Sterzentsenko, V., Karakottas, A., Papachristou, A., Zioulis, N., Doumanoglou, A., Zarpalas, D., & Daras, P. (2018, November). [A low-cost, flexible and portable volumetric capturing system](https://arxiv.org/pdf/1909.01207.pdf). In 2018 14th International Conference on Signal-Image Technology & Internet-Based Systems (SITIS) (pp. 200-207). IEEE.
+<a name="VolCap"/>__[1]__ [Volumetric Capture @ VCL3D](https://github.com/VCL3D/VolumetricCapture)
