@@ -8,10 +8,17 @@ description: "Qualitative Benchmark Results"
 # Visualized Error on the Converged Poses
 Fitting results upon convergence of each optimizer with a dense error metric denoted using the heatmap overlayed at each animated mesh vertex.
 
+## Local Experiments
 - **Project#2**
 
-![Exp2_1](./assets/images/qualitative/experiment2/experiment2_1.png)
-![Exp2_2](./assets/images/qualitative/experiment2/experiment2_2.png)
+![LocalExp2_1](./assets/images/qualitative/local/experiment2/experiment2_1.png)
+![LocalExp2_2](./assets/images/qualitative/local/experiment2/experiment2_2.png)
+
+## Global Experiments
+- **Project#4**
+
+![GlobalExp4_1](./assets/images/qualitative/global/experiment4/GlobalQualitative1.png)
+![GlobalExp4_2](./assets/images/qualitative/global/experiment4/GlobalQualitative2.png)
 
 More Projects Coming Soon 
 {: .label .label-purple }
